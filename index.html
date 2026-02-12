@@ -596,12 +596,12 @@
     margin-bottom: 32px;
   }
   .logos-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-weight: 500;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+    text-transform: none;
+    font-weight: 800;
   }
 
   .logos-track-wrapper {
@@ -649,15 +649,15 @@
 
   .logo-item {
     flex-shrink: 0;
-    height: 48px;
-    min-width: 120px;
-    padding: 0 24px;
+    height: 90px;
+    min-width: 200px;
+    padding: 0 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 14px;
     transition: all 0.3s;
   }
   .logo-item:hover {
@@ -672,7 +672,7 @@
     white-space: nowrap;
   }
   .logo-item img {
-    height: 28px;
+    height: 70px;
     width: auto;
     opacity: 0.85;
     transition: all 0.3s;
@@ -683,7 +683,7 @@
 
   @media (max-width: 768px) {
     .logos-slide { gap: 32px; }
-    .logo-item { min-width: 100px; padding: 0 16px; height: 42px; }
+    .logo-item { min-width: 140px; padding: 0 20px; height: 70px; }
     .logos-fade { width: 50px; }
   }
 
@@ -1400,12 +1400,7 @@
       </div>
     </div>
     <div class="prestation-photo blue-glow">
-      <!-- REMPLACER par : <img src="votre-photo-note-calcul.jpg" alt="Note de calcul Caneco"> -->
-      <div class="photo-placeholder">
-        <div class="preview-grid"></div>
-        <span class="photo-icon">📄</span>
-        <span class="photo-label">Photo — Note de calcul</span>
-      </div>
+      <img src="photos%20prestas/ndc1.png" alt="Note de calcul Caneco" style="width:100%; height:100%; object-fit:cover; border-radius:var(--radius);">
     </div>
   </div>
 
@@ -1737,25 +1732,28 @@
     <h2 class="section-title">Recevez votre devis sous 24h</h2>
     <p class="section-subtitle">Remplissez le formulaire, on revient vers vous rapidement.</p>
   </div>
-  <div class="devis-form reveal">
+  <form action="https://formsubmit.co/contact@reselec.fr" method="POST" class="devis-form reveal">
+    <input type="hidden" name="_subject" value="Nouvelle demande de devis — RES ELEC">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://landing-reselec.vercel.app/#devis">
     <div class="form-row">
       <div class="form-group">
         <label>Nom / Entreprise *</label>
-        <input type="text" placeholder="Ex : SMP Élec" required>
+        <input type="text" name="nom" placeholder="Ex : SMP Élec" required>
       </div>
       <div class="form-group">
         <label>Email *</label>
-        <input type="email" placeholder="contact@votreentreprise.fr" required>
+        <input type="email" name="email" placeholder="contact@votreentreprise.fr" required>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
         <label>Téléphone</label>
-        <input type="tel" placeholder="06 XX XX XX XX">
+        <input type="tel" name="telephone" placeholder="06 XX XX XX XX">
       </div>
       <div class="form-group">
         <label>Type de prestation</label>
-        <select>
+        <select name="prestation">
           <option value="">Sélectionnez...</option>
           <option>Notes de calcul Caneco</option>
           <option>Schémas unifilaires</option>
@@ -1773,7 +1771,7 @@
     <div class="form-row">
       <div class="form-group full">
         <label>Décrivez votre projet *</label>
-        <textarea placeholder="Type de bâtiment, puissance estimée, nombre de tableaux, délai souhaité..."></textarea>
+        <textarea name="projet" placeholder="Type de bâtiment, puissance estimée, nombre de tableaux, délai souhaité..."></textarea>
       </div>
     </div>
     <div class="form-submit">
@@ -1781,7 +1779,7 @@
         Envoyer ma demande <span class="arrow">→</span>
       </button>
     </div>
-  </div>
+  </form>
 </section>
 
 <!-- CTA -->

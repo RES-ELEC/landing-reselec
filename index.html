@@ -956,7 +956,6 @@
     overflow: hidden;
     border: 1px solid var(--border);
     background: var(--bg-card);
-    aspect-ratio: 16/9;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .prestation-photo:hover {
@@ -990,8 +989,7 @@
   }
   .prestation-photo img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
   }
 
@@ -1015,6 +1013,81 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     white-space: nowrap;
+  }
+
+  /* ============ CAROUSEL ============ */
+  .carousel {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .carousel:hover {
+    border-color: var(--border-hover);
+  }
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .carousel-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+  }
+  .carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border-hover);
+    background: rgba(7, 9, 14, 0.85);
+    backdrop-filter: blur(12px);
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    z-index: 10;
+  }
+  .carousel-btn:hover {
+    background: var(--brand-blue);
+    border-color: var(--brand-blue);
+  }
+  .carousel-btn.prev { left: 12px; }
+  .carousel-btn.next { right: 12px; }
+  .carousel-dots {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+  }
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    opacity: 0.4;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+  }
+  .carousel-dot.active {
+    opacity: 1;
+    background: var(--brand-yellow);
+    transform: scale(1.3);
   }
 
   /* ============ PROCESS ============ */
@@ -1400,7 +1473,7 @@
       </div>
     </div>
     <div class="prestation-photo blue-glow">
-      <img src="photos%20prestas/ndc1.png" alt="Note de calcul Caneco" style="width:100%; height:100%; object-fit:cover; border-radius:var(--radius);">
+      <img src="photos%20prestas/ndc1.png" alt="Note de calcul Caneco">
     </div>
   </div>
 
@@ -1423,22 +1496,18 @@
       <span class="sub-label-text">Puissance</span>
       <span class="sub-label-line"></span>
     </div>
-    <div class="prestation-preview yellow-glow" style="margin-bottom: 32px;">
-      <div class="preview-toolbar">
-        <span class="toolbar-dot"></span>
-        <span class="toolbar-dot"></span>
-        <span class="toolbar-dot"></span>
-        <span class="toolbar-title">schema_puissance_TGBT.dwg — AutoCAD</span>
+    <div class="carousel yellow-glow" id="carousel-puissance" style="margin-bottom: 32px;">
+      <div class="carousel-track">
+        <div class="carousel-slide"><img src="photos%20prestas/sch1.png" alt="Schéma puissance 1"></div>
+        <div class="carousel-slide"><img src="photos%20prestas/sch2.png" alt="Schéma puissance 2"></div>
+        <div class="carousel-slide"><img src="photos%20prestas/sch3.png" alt="Schéma puissance 3"></div>
       </div>
-      <div class="preview-content">
-        <div class="preview-grid"></div>
-        <div class="preview-play yellow">
-          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-        </div>
-        <div class="preview-hint">
-          <div class="scroll-icon"><span></span></div>
-          Voir un exemple — partie puissance
-        </div>
+      <button class="carousel-btn prev" onclick="moveCarousel('carousel-puissance', -1)">‹</button>
+      <button class="carousel-btn next" onclick="moveCarousel('carousel-puissance', 1)">›</button>
+      <div class="carousel-dots">
+        <button class="carousel-dot active" onclick="goToSlide('carousel-puissance', 0)"></button>
+        <button class="carousel-dot" onclick="goToSlide('carousel-puissance', 1)"></button>
+        <button class="carousel-dot" onclick="goToSlide('carousel-puissance', 2)"></button>
       </div>
     </div>
 
@@ -1448,22 +1517,20 @@
       <span class="sub-label-text">Commande</span>
       <span class="sub-label-line"></span>
     </div>
-    <div class="prestation-preview yellow-glow">
-      <div class="preview-toolbar">
-        <span class="toolbar-dot"></span>
-        <span class="toolbar-dot"></span>
-        <span class="toolbar-dot"></span>
-        <span class="toolbar-title">schema_commande.dwg — AutoCAD</span>
+    <div class="carousel yellow-glow" id="carousel-commande">
+      <div class="carousel-track">
+        <div class="carousel-slide"><img src="photos%20prestas/sch4.png" alt="Schéma commande 1"></div>
+        <div class="carousel-slide"><img src="photos%20prestas/sch5.png" alt="Schéma commande 2"></div>
+        <div class="carousel-slide"><img src="photos%20prestas/sch6.png" alt="Schéma commande 3"></div>
+        <div class="carousel-slide"><img src="photos%20prestas/sch7.png" alt="Schéma commande 4"></div>
       </div>
-      <div class="preview-content">
-        <div class="preview-grid"></div>
-        <div class="preview-play yellow">
-          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-        </div>
-        <div class="preview-hint">
-          <div class="scroll-icon"><span></span></div>
-          Voir un exemple — partie commande
-        </div>
+      <button class="carousel-btn prev" onclick="moveCarousel('carousel-commande', -1)">‹</button>
+      <button class="carousel-btn next" onclick="moveCarousel('carousel-commande', 1)">›</button>
+      <div class="carousel-dots">
+        <button class="carousel-dot active" onclick="goToSlide('carousel-commande', 0)"></button>
+        <button class="carousel-dot" onclick="goToSlide('carousel-commande', 1)"></button>
+        <button class="carousel-dot" onclick="goToSlide('carousel-commande', 2)"></button>
+        <button class="carousel-dot" onclick="goToSlide('carousel-commande', 3)"></button>
       </div>
     </div>
   </div>
@@ -1851,11 +1918,48 @@
     }
   });
 
-  // Form
-  document.querySelector('.form-submit .btn-primary').addEventListener('click', function(e) {
-    e.preventDefault();
-    alert('Merci pour votre demande ! Nous vous recontactons sous 24h.');
-  });
+  // Carousel functionality
+  const carouselState = {};
+
+  function initCarousel(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const slides = el.querySelectorAll('.carousel-slide');
+    carouselState[id] = { current: 0, total: slides.length };
+    // Auto-play every 3 seconds
+    carouselState[id].interval = setInterval(() => moveCarousel(id, 1), 3000);
+    // Pause on hover
+    el.addEventListener('mouseenter', () => clearInterval(carouselState[id].interval));
+    el.addEventListener('mouseleave', () => {
+      carouselState[id].interval = setInterval(() => moveCarousel(id, 1), 3000);
+    });
+  }
+
+  function moveCarousel(id, dir) {
+    const state = carouselState[id];
+    if (!state) return;
+    state.current = (state.current + dir + state.total) % state.total;
+    updateCarousel(id);
+  }
+
+  function goToSlide(id, index) {
+    const state = carouselState[id];
+    if (!state) return;
+    state.current = index;
+    updateCarousel(id);
+  }
+
+  function updateCarousel(id) {
+    const el = document.getElementById(id);
+    const state = carouselState[id];
+    const track = el.querySelector('.carousel-track');
+    track.style.transform = `translateX(-${state.current * 100}%)`;
+    const dots = el.querySelectorAll('.carousel-dot');
+    dots.forEach((d, i) => d.classList.toggle('active', i === state.current));
+  }
+
+  initCarousel('carousel-puissance');
+  initCarousel('carousel-commande');
 </script>
 
 <!-- FLOATING CONTACT BUTTON -->

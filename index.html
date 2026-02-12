@@ -1027,12 +1027,19 @@
   .carousel:hover {
     border-color: var(--border-hover);
   }
+  .carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
   .carousel-track {
     display: flex;
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 100%;
   }
   .carousel-slide {
     min-width: 100%;
+    width: 100%;
     flex-shrink: 0;
   }
   .carousel-slide img {
@@ -1497,10 +1504,12 @@
       <span class="sub-label-line"></span>
     </div>
     <div class="carousel yellow-glow" id="carousel-puissance" style="margin-bottom: 32px;">
-      <div class="carousel-track">
-        <div class="carousel-slide"><img src="photos%20prestas/sch1.png" alt="Schéma puissance 1"></div>
-        <div class="carousel-slide"><img src="photos%20prestas/sch2.png" alt="Schéma puissance 2"></div>
-        <div class="carousel-slide"><img src="photos%20prestas/sch3.png" alt="Schéma puissance 3"></div>
+      <div class="carousel-inner">
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="photos%20prestas/sch1.png" alt="Schéma puissance 1"></div>
+          <div class="carousel-slide"><img src="photos%20prestas/sch2.png" alt="Schéma puissance 2"></div>
+          <div class="carousel-slide"><img src="photos%20prestas/sch3.png" alt="Schéma puissance 3"></div>
+        </div>
       </div>
       <button class="carousel-btn prev" onclick="moveCarousel('carousel-puissance', -1)">‹</button>
       <button class="carousel-btn next" onclick="moveCarousel('carousel-puissance', 1)">›</button>
@@ -1518,11 +1527,13 @@
       <span class="sub-label-line"></span>
     </div>
     <div class="carousel yellow-glow" id="carousel-commande">
-      <div class="carousel-track">
-        <div class="carousel-slide"><img src="photos%20prestas/sch4.png" alt="Schéma commande 1"></div>
-        <div class="carousel-slide"><img src="photos%20prestas/sch5.png" alt="Schéma commande 2"></div>
-        <div class="carousel-slide"><img src="photos%20prestas/sch6.png" alt="Schéma commande 3"></div>
-        <div class="carousel-slide"><img src="photos%20prestas/sch7.png" alt="Schéma commande 4"></div>
+      <div class="carousel-inner">
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="photos%20prestas/sch4.png" alt="Schéma commande 1"></div>
+          <div class="carousel-slide"><img src="photos%20prestas/sch5.png" alt="Schéma commande 2"></div>
+          <div class="carousel-slide"><img src="photos%20prestas/sch6.png" alt="Schéma commande 3"></div>
+          <div class="carousel-slide"><img src="photos%20prestas/sch7.png" alt="Schéma commande 4"></div>
+        </div>
       </div>
       <button class="carousel-btn prev" onclick="moveCarousel('carousel-commande', -1)">‹</button>
       <button class="carousel-btn next" onclick="moveCarousel('carousel-commande', 1)">›</button>
@@ -1547,22 +1558,20 @@
         <span class="prestation-feat"><span class="dot-blue">●</span> Format DWG + PDF</span>
       </div>
     </div>
-    <div class="prestation-preview blue-glow">
-      <div class="preview-toolbar">
-        <span class="toolbar-dot"></span>
-        <span class="toolbar-dot"></span>
-        <span class="toolbar-dot"></span>
-        <span class="toolbar-title">plan_implantation_RDC.dwg — AutoCAD</span>
+    <div class="carousel blue-glow" id="carousel-plans">
+      <div class="carousel-inner">
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="photos%20prestas/pl1.png" alt="Plan d'implantation 1"></div>
+          <div class="carousel-slide"><img src="photos%20prestas/pl2.png" alt="Plan d'implantation 2"></div>
+          <div class="carousel-slide"><img src="photos%20prestas/pl3.png" alt="Plan d'implantation 3"></div>
+        </div>
       </div>
-      <div class="preview-content">
-        <div class="preview-grid"></div>
-        <div class="preview-play blue">
-          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-        </div>
-        <div class="preview-hint">
-          <div class="scroll-icon"><span></span></div>
-          Voir un exemple de plan d'implantation
-        </div>
+      <button class="carousel-btn prev" onclick="moveCarousel('carousel-plans', -1)">‹</button>
+      <button class="carousel-btn next" onclick="moveCarousel('carousel-plans', 1)">›</button>
+      <div class="carousel-dots">
+        <button class="carousel-dot active" onclick="goToSlide('carousel-plans', 0)"></button>
+        <button class="carousel-dot" onclick="goToSlide('carousel-plans', 1)"></button>
+        <button class="carousel-dot" onclick="goToSlide('carousel-plans', 2)"></button>
       </div>
     </div>
   </div>
@@ -1580,12 +1589,7 @@
       </div>
     </div>
     <div class="prestation-photo yellow-glow">
-      <!-- REMPLACER par : <img src="votre-photo-synoptique.jpg" alt="Synoptique"> -->
-      <div class="photo-placeholder">
-        <div class="preview-grid"></div>
-        <span class="photo-icon">🔌</span>
-        <span class="photo-label">Photo — Synoptique</span>
-      </div>
+      <img src="photos%20prestas/sn1.png" alt="Synoptique général">
     </div>
   </div>
 
@@ -1602,12 +1606,7 @@
       </div>
     </div>
     <div class="prestation-photo blue-glow">
-      <!-- REMPLACER par : <img src="votre-photo-bilan.jpg" alt="Bilan de puissance"> -->
-      <div class="photo-placeholder">
-        <div class="preview-grid"></div>
-        <span class="photo-icon">📊</span>
-        <span class="photo-label">Photo — Bilan de puissance</span>
-      </div>
+      <img src="photos%20prestas/bp1.png" alt="Bilan de puissance">
     </div>
   </div>
 
@@ -1616,7 +1615,7 @@
     <div class="prestation-header">
       <div class="prestation-tag yellow"><span class="tag-dot"></span> Analyseur de réseau</div>
       <h3>Pose d'analyseur & analyse de données</h3>
-      <p>Installation d'analyseurs de réseau sur vos installations, collecte des données de mesure et restitution d'un rapport d'analyse complet : qualité du réseau, harmoniques, déséquilibres, consommations et préconisations.</p>
+      <p>Installation d'analyseurs de réseau sur vos installations, collecte des données de mesure et restitution d'un rapport d'analyse complet : qualité du réseau, harmoniques, déséquilibres, consommations et préconisations. Nous utilisons l'analyseur de réseau <strong>FLUKE 1738</strong>, un appareil de dernière génération ultra-performant, garantissant des mesures d'une précision inégalée et une fiabilité totale sur chaque intervention.</p>
       <div class="prestation-features">
         <span class="prestation-feat"><span class="dot-yellow">●</span> Pose & dépose de l'analyseur</span>
         <span class="prestation-feat"><span class="dot-yellow">●</span> Analyse des harmoniques & déséquilibres</span>
@@ -1624,11 +1623,8 @@
       </div>
     </div>
     <div class="prestation-photo yellow-glow">
-      <!-- REMPLACER par : <img src="votre-photo-analyseur.jpg" alt="Analyseur de réseau"> -->
-      <div class="photo-placeholder">
-        <div class="preview-grid"></div>
-        <span class="photo-icon">📡</span>
-        <span class="photo-label">Photo — Analyseur de réseau</span>
+      <div style="display:flex; align-items:center; justify-content:center; background:linear-gradient(145deg, #0a0d15 0%, #111728 40%, #0a0d15 100%); padding:40px;">
+        <img src="photos%20prestas/anr1.png" alt="Analyseur de réseau FLUKE 1738" style="max-height:360px; width:auto; border-radius:12px;">
       </div>
     </div>
   </div>
@@ -1647,11 +1643,8 @@
       </div>
     </div>
     <div class="prestation-photo blue-glow">
-      <!-- REMPLACER par : <img src="votre-photo-chiffrage.jpg" alt="Chiffrage de chantier"> -->
-      <div class="photo-placeholder">
-        <div class="preview-grid"></div>
-        <span class="photo-icon">🧮</span>
-        <span class="photo-label">Photo — Chiffrage de chantier</span>
+      <div style="display:flex; align-items:center; justify-content:center; background:linear-gradient(145deg, #0a0d15 0%, #111728 40%, #0a0d15 100%); padding:40px;">
+        <img src="photos%20prestas/ch1.png" alt="Chiffrage de chantier" style="max-height:360px; width:auto; border-radius:12px;">
       </div>
     </div>
   </div>
@@ -1670,11 +1663,8 @@
       </div>
     </div>
     <div class="prestation-photo yellow-glow">
-      <!-- REMPLACER par : <img src="votre-photo-thermographie.jpg" alt="Thermographie infrarouge"> -->
-      <div class="photo-placeholder">
-        <div class="preview-grid"></div>
-        <span class="photo-icon">🌡️</span>
-        <span class="photo-label">Photo — Thermographie sur site</span>
+      <div style="display:flex; align-items:center; justify-content:center; background:linear-gradient(145deg, #0a0d15 0%, #111728 40%, #0a0d15 100%); padding:40px;">
+        <img src="photos%20prestas/th1.png" alt="Thermographie infrarouge" style="max-height:360px; width:auto; border-radius:12px;">
       </div>
     </div>
   </div>
@@ -1953,13 +1943,14 @@
     const el = document.getElementById(id);
     const state = carouselState[id];
     const track = el.querySelector('.carousel-track');
-    track.style.transform = `translateX(-${state.current * 100}%)`;
+    track.style.transform = 'translateX(-' + (state.current * 100) + '%)';
     const dots = el.querySelectorAll('.carousel-dot');
-    dots.forEach((d, i) => d.classList.toggle('active', i === state.current));
+    dots.forEach(function(d, i) { d.classList.toggle('active', i === state.current); });
   }
 
   initCarousel('carousel-puissance');
   initCarousel('carousel-commande');
+  initCarousel('carousel-plans');
 </script>
 
 <!-- FLOATING CONTACT BUTTON -->

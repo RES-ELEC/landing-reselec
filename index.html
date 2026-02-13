@@ -1638,7 +1638,7 @@
   </h1>
 
   <p class="hero-sub">
-    Notes de calcul, schémas unifilaires, plans d'implantation, synoptiques, bilans de puissance, pose d'analyseurs de réseau, chiffrage de chantier et thermographie — réalisés par des experts forts de plus de 10 ans d'études. Concentrez-vous sur vos chantiers, on gère la partie études.
+    Notes de calcul, schémas unifilaires, plans d'implantation, synoptiques, bilans de puissance, pose d'analyseurs de réseau, chiffrage de chantier et thermographie — réalisés par des experts forts de plus de 10 ans d'expérience en bureau d'études. Concentrez-vous sur vos chantiers, on gère la partie études.
   </p>
 
   <div class="hero-buttons">
@@ -1707,7 +1707,7 @@
 <!-- ============ PRESTATIONS — MERGED SERVICES + VIDEOS ============ -->
 <section class="prestations-section" id="prestations">
   <div class="section-header reveal">
-    <div class="section-label">Nos prestations</div>
+    <div class="section-label" style="font-size:1.6rem; color:var(--brand-yellow); font-weight:800;">Nos prestations</div>
     <div class="brand-divider"></div>
     <h2 class="section-title">Nos études illustrées</h2>
     <p class="section-subtitle">Découvrez ce qu'on produit pour vous. Scrollez pour voir un exemple concret de chaque prestation.</p>
@@ -1717,7 +1717,7 @@
   <div class="prestation-block reveal">
     <div class="prestation-header">
       <div class="prestation-tag blue"><span class="tag-dot"></span> Note de calcul</div>
-      <h3>Dimensionnement Caneco BT</h3>
+      <h3>Note de calcul CANECO</h3>
       <p>Notes de calcul complètes générées sous Caneco : vérification des protections, sélectivité, chutes de tension et courants de court-circuit. Le document qui valide votre installation.</p>
       <div class="prestation-features">
         <span class="prestation-feat"><span class="dot-blue">●</span> Calcul Caneco certifié</span>
@@ -1755,6 +1755,7 @@
           <div class="carousel-slide"><img src="photos%20prestas/sch1.png" alt="Schéma puissance 1"></div>
           <div class="carousel-slide"><img src="photos%20prestas/sch2.png" alt="Schéma puissance 2"></div>
           <div class="carousel-slide"><img src="photos%20prestas/sch3.png" alt="Schéma puissance 3"></div>
+          <div class="carousel-slide"><img src="photos%20prestas/sch3b.png" alt="Schéma puissance 4"></div>
         </div>
       </div>
       <button class="carousel-btn prev" onclick="moveCarousel('carousel-puissance', -1)">‹</button>
@@ -1763,6 +1764,7 @@
         <button class="carousel-dot active" onclick="goToSlide('carousel-puissance', 0)"></button>
         <button class="carousel-dot" onclick="goToSlide('carousel-puissance', 1)"></button>
         <button class="carousel-dot" onclick="goToSlide('carousel-puissance', 2)"></button>
+        <button class="carousel-dot" onclick="goToSlide('carousel-puissance', 3)"></button>
       </div>
     </div>
 
@@ -2142,12 +2144,12 @@
   <div class="footer-left">© 2026 RES ELEC — Bureau d'études électriques</div>
   <div class="footer-right">
     <a href="#">LinkedIn</a>
-    <a href="mailto:contact@reselec.fr">Email</a>
+    <a href="/cdn-cgi/l/email-protection#b4d7dbdac0d5d7c0f4c6d1c7d1d8d1d79ad2c6">Email</a>
     <a href="#">Mentions légales</a>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Reveal on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
@@ -2250,11 +2252,11 @@
     </div>
     <div class="contact-modal-phone" style="margin-bottom:20px;">
       <div class="phone-icon">✉️</div>
-      <div class="phone-number" style="font-size:1.05rem;">contact@reselec.fr</div>
+      <div class="phone-number" style="font-size:1.05rem;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f0939f9e84919384b0829583959c9593de9682">[email&#160;protected]</a></div>
     </div>
     <div class="contact-modal-actions">
       <a href="tel:+33689634487" class="btn-call" onclick="window.location.href='tel:+33689634487';">📞 Appeler</a>
-      <a href="mailto:contact@reselec.fr" class="btn-email" onclick="window.location.href='mailto:contact@reselec.fr';">✉️ Envoyer un email</a>
+      <a href="/cdn-cgi/l/email-protection#492a26273d282a3d093b2c3a2c252c2a672f3b" class="btn-email" onclick="window.location.href='mailto:contact@reselec.fr';">✉️ Envoyer un email</a>
     </div>
   </div>
 </div>
@@ -2266,7 +2268,7 @@
       <span class="opt-icon phone">📞</span>
       Appeler directement
     </a>
-    <a href="mailto:contact@reselec.fr" class="floating-option" onclick="window.location.href='mailto:contact@reselec.fr';">
+    <a href="/cdn-cgi/l/email-protection#beddd1d0cadfddcafeccdbcddbd2dbdd90d8cc" class="floating-option" onclick="window.location.href='mailto:contact@reselec.fr';">
       <span class="opt-icon mail">✉️</span>
       Envoyer un email
     </a>
@@ -2284,7 +2286,7 @@
   </button>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Floating contact toggle
   const floatingContact = document.getElementById('floatingContact');
   const floatingBtn = document.getElementById('floatingBtn');
@@ -2302,21 +2304,4 @@
   // Close when clicking outside
   document.addEventListener('click', (e) => {
     if (!floatingContact.contains(e.target)) {
-      floatingContact.classList.remove('open');
-    }
-  });
-
-  // Contact modal — close on overlay click
-  const contactModal = document.getElementById('contactModal');
-  contactModal.addEventListener('click', (e) => {
-    if (e.target === contactModal) {
-      contactModal.classList.remove('open');
-    }
-  });
-  // Close modal with Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') contactModal.classList.remove('open');
-  });
-</script>
-</body>
-</html>
+      floatingContact.classList.re

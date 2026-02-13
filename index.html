@@ -1316,6 +1316,259 @@
   }
   .cta-guarantee .check { color: var(--accent-green); font-size: 1rem; }
 
+  /* ============ PARTNERS ============ */
+  .partners-section {
+    padding: 120px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .partners-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .partners-text > p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 300;
+  }
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  .partner-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 36px 28px;
+    text-align: center;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+  .partner-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gradient-accent);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .partner-card:hover {
+    border-color: rgba(37, 99, 235, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  }
+  .partner-card:hover::before { opacity: 1; }
+  .partner-icon {
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+    display: block;
+  }
+  .partner-card h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+  }
+  .partner-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+  .partners-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    background: linear-gradient(135deg, rgba(16, 19, 28, 0.9), rgba(234, 179, 8, 0.06));
+    border: 1px solid rgba(234, 179, 8, 0.15);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+  }
+  .partners-note-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .partners-note p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* ============ CONTACT MODAL ============ */
+  .contact-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .contact-modal-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .contact-modal {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 48px;
+    max-width: 440px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transform: scale(0.95) translateY(10px);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .contact-modal-overlay.open .contact-modal {
+    transform: scale(1) translateY(0);
+  }
+  .contact-modal::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gradient-accent);
+  }
+  .contact-modal-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--bg-surface);
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+  }
+  .contact-modal-close:hover {
+    border-color: var(--border-hover);
+    color: var(--text-primary);
+    background: var(--bg-card-hover);
+  }
+  .contact-modal-avatar {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    background: var(--gradient-brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: white;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 32px rgba(37, 99, 235, 0.25);
+  }
+  .contact-modal h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .contact-modal .contact-role {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .contact-modal .contact-company {
+    font-size: 0.82rem;
+    color: var(--brand-blue-light);
+    font-weight: 600;
+    margin-bottom: 32px;
+  }
+  .contact-modal-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 28px;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+  }
+  .contact-modal-phone:hover {
+    border-color: rgba(37, 99, 235, 0.3);
+    background: rgba(37, 99, 235, 0.05);
+  }
+  .contact-modal-phone .phone-icon {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--gradient-brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .contact-modal-phone .phone-number {
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--text-primary);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .contact-modal-actions {
+    display: flex;
+    gap: 12px;
+  }
+  .contact-modal-actions a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+  }
+  .contact-modal-actions .btn-call {
+    background: var(--gradient-brand);
+    color: white;
+  }
+  .contact-modal-actions .btn-call:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.3);
+  }
+  .contact-modal-actions .btn-email {
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+  }
+  .contact-modal-actions .btn-email:hover {
+    border-color: var(--border-hover);
+    background: var(--bg-card-hover);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 768px) {
+    .contact-modal { padding: 36px 24px; }
+    .contact-modal-phone .phone-number { font-size: 1.15rem; }
+    .contact-modal-actions { flex-direction: column; }
+  }
+
   /* ============ FOOTER ============ */
   footer {
     padding: 40px;
@@ -1341,7 +1594,10 @@
     .trust-bar { flex-direction: column; gap: 24px; }
     .pain-section, .prestations-section,
     .process-section, .testimonials,
-    .cta-section, .form-section { padding: 80px 20px; }
+    .cta-section, .form-section,
+    .partners-section { padding: 80px 20px; }
+    .partners-grid { grid-template-columns: 1fr; }
+    .partners-note { flex-direction: column; gap: 12px; padding: 24px 20px; }
     .cta-box { padding: 48px 28px; }
     .devis-form { padding: 32px 24px; }
     .form-row { grid-template-columns: 1fr; }
@@ -1376,18 +1632,6 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge">
-    <span class="badge-icon">
-      <span class="badge-bolt">⚡</span>
-    </span>
-    <span class="badge-separator"></span>
-    <span class="badge-text"><span style="color:var(--brand-yellow)">Bureau d'études</span> <span style="color:var(--brand-blue-light)">électriques</span></span>
-  </div>
-
-  <div class="hero-logo" style="margin-bottom:32px; animation: fadeInUp 0.8s ease-out 0.05s both;">
-    <img src="logo-reselec.png" alt="RES ELEC" style="height:90px; width:auto;">
-  </div>
-
   <h1>
     Vos études<br>
     <span class="text-yellow">livrées</span> <span class="text-blue">rapidement</span>
@@ -1401,7 +1645,9 @@
     <a href="#devis" class="btn-primary btn-yellow">
       Demander un devis gratuit <span class="arrow">→</span>
     </a>
-    <a href="#prestations" class="btn-secondary">Voir nos prestations</a>
+    <a href="#" class="btn-primary" onclick="event.preventDefault(); document.getElementById('contactModal').classList.add('open');">
+      📞 Nous contacter — 06 89 63 44 87
+    </a>
   </div>
 
   <div class="trust-bar">
@@ -1781,6 +2027,43 @@
   </div>
 </section>
 
+<!-- NOS PARTENAIRES -->
+<section class="partners-section" id="partenaires">
+  <div class="section-header reveal">
+    <div class="section-label yellow">Nos partenaires</div>
+    <div class="brand-divider"></div>
+    <h2 class="section-title">Nos partenaires pour vous accompagner<br>tout au long de votre projet</h2>
+    <p class="section-subtitle" style="max-width:640px;">Nous travaillons avec des partenaires de confiance pour accompagner nos clients dans le déroulement complet de leur chantier.</p>
+  </div>
+
+  <div class="partners-content reveal">
+    <div class="partners-text">
+      <p>Au-delà de nos études, nous collaborons étroitement avec un réseau de professionnels triés sur le volet pour assurer la réussite de votre projet de bout en bout :</p>
+      <div class="partners-grid">
+        <div class="partner-card">
+          <div class="partner-icon">🔧</div>
+          <h4>Tableautiers</h4>
+          <p>Fabrication et câblage de vos armoires électriques à partir de nos schémas, dans le respect strict de nos études.</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-icon">🔍</div>
+          <h4>Bureaux de contrôle</h4>
+          <p>Vérification des installations et levée de réserves pour une mise en conformité rapide et sans surprise.</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-icon">⚡</div>
+          <h4>Électriciens qualifiés</h4>
+          <p>Des professionnels compétents pour la pose des armoires sur chantier et la mise en service de vos installations.</p>
+        </div>
+      </div>
+      <div class="partners-note">
+        <div class="partners-note-icon">💡</div>
+        <p>Si nous orientons nos clients vers ces partenaires, c'est parce qu'ils sortent du lot. Notre priorité est que le travail en amont comme en aval de nos études soit réalisé avec le même niveau d'exigence que le nôtre.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- DEVIS FORM -->
 <section class="form-section" id="devis">
   <div class="section-header reveal">
@@ -1842,7 +2125,7 @@
   <div class="cta-box reveal">
     <h2>Un projet en cours ?<br>Parlons-en <span class="text-yellow">maintenant</span>.</h2>
     <p>Appelez-nous directement ou envoyez votre demande. Devis gratuit, réponse sous 24h, zéro engagement.</p>
-    <a href="tel:+33689634487" class="btn-primary">
+    <a href="#" class="btn-primary" onclick="event.preventDefault(); document.getElementById('contactModal').classList.add('open');">
       Appeler maintenant <span class="arrow">→</span>
     </a>
     <div class="cta-guarantees">
@@ -1859,12 +2142,12 @@
   <div class="footer-left">© 2026 RES ELEC — Bureau d'études électriques</div>
   <div class="footer-right">
     <a href="#">LinkedIn</a>
-    <a href="/cdn-cgi/l/email-protection#e88b87869c898b9ca89a8d9b8d848d8bc68e9a">Email</a>
+    <a href="mailto:contact@reselec.fr">Email</a>
     <a href="#">Mentions légales</a>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Reveal on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
@@ -1876,11 +2159,13 @@
   }, { threshold: 0.06, rootMargin: '0px 0px -20px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Smooth scroll
+  // Smooth scroll (only for # links, not tel: or mailto:)
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (!href || href === '#') return;
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const target = document.querySelector(href);
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
@@ -1951,14 +2236,37 @@
   initCarousel('carousel-plans');
 </script>
 
+<!-- CONTACT MODAL -->
+<div class="contact-modal-overlay" id="contactModal">
+  <div class="contact-modal">
+    <button class="contact-modal-close" onclick="document.getElementById('contactModal').classList.remove('open');">✕</button>
+    <div class="contact-modal-avatar">DP</div>
+    <h3>Dorian PATOUT</h3>
+    <div class="contact-role">Directeur Technique</div>
+    <div class="contact-company">RES ELEC — Bureau d'études électriques</div>
+    <div class="contact-modal-phone">
+      <div class="phone-icon">📞</div>
+      <div class="phone-number">06 89 63 44 87</div>
+    </div>
+    <div class="contact-modal-phone" style="margin-bottom:20px;">
+      <div class="phone-icon">✉️</div>
+      <div class="phone-number" style="font-size:1.05rem;">contact@reselec.fr</div>
+    </div>
+    <div class="contact-modal-actions">
+      <a href="tel:+33689634487" class="btn-call" onclick="window.location.href='tel:+33689634487';">📞 Appeler</a>
+      <a href="mailto:contact@reselec.fr" class="btn-email" onclick="window.location.href='mailto:contact@reselec.fr';">✉️ Envoyer un email</a>
+    </div>
+  </div>
+</div>
+
 <!-- FLOATING CONTACT BUTTON -->
 <div class="floating-contact" id="floatingContact">
   <div class="floating-contact-expanded">
-    <a href="tel:+33689634487" class="floating-option">
+    <a href="#" class="floating-option" onclick="event.preventDefault(); document.getElementById('contactModal').classList.add('open'); floatingContact.classList.remove('open');">
       <span class="opt-icon phone">📞</span>
       Appeler directement
     </a>
-    <a href="/cdn-cgi/l/email-protection#63000c0d1702001723110610060f06004d0511" class="floating-option">
+    <a href="mailto:contact@reselec.fr" class="floating-option" onclick="window.location.href='mailto:contact@reselec.fr';">
       <span class="opt-icon mail">✉️</span>
       Envoyer un email
     </a>
@@ -1976,7 +2284,7 @@
   </button>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Floating contact toggle
   const floatingContact = document.getElementById('floatingContact');
   const floatingBtn = document.getElementById('floatingBtn');
@@ -1994,4 +2302,21 @@
   // Close when clicking outside
   document.addEventListener('click', (e) => {
     if (!floatingContact.contains(e.target)) {
-      floatingContact.classList.remo
+      floatingContact.classList.remove('open');
+    }
+  });
+
+  // Contact modal — close on overlay click
+  const contactModal = document.getElementById('contactModal');
+  contactModal.addEventListener('click', (e) => {
+    if (e.target === contactModal) {
+      contactModal.classList.remove('open');
+    }
+  });
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') contactModal.classList.remove('open');
+  });
+</script>
+</body>
+</html>

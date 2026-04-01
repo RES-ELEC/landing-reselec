@@ -2251,17 +2251,17 @@
     <h3>Dorian PATOUT</h3>
     <div class="contact-role">Directeur Technique</div>
     <div class="contact-company">RES ELEC — Bureau d'études électriques</div>
-    <div class="contact-modal-phone">
+    <a href="tel:+33689634487" class="contact-modal-phone" style="text-decoration:none;cursor:pointer;">
       <div class="phone-icon">📞</div>
       <div class="phone-number">06 89 63 44 87</div>
-    </div>
+    </a>
     <div class="contact-modal-phone" style="margin-bottom:20px;">
       <div class="phone-icon">✉️</div>
-      <div class="phone-number" style="font-size:1.05rem;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f0939f9e84919384b0829583959c9593de9682">[email&#160;protected]</a></div>
+      <div class="phone-number" style="font-size:1.05rem;"><a href="mailto:contact@reselec.fr" style="color:inherit;text-decoration:none;">contact@reselec.fr</a></div>
     </div>
     <div class="contact-modal-actions">
       <a href="tel:+33689634487" class="btn-call" onclick="window.location.href='tel:+33689634487';">📞 Appeler</a>
-      <a href="/cdn-cgi/l/email-protection#492a26273d282a3d093b2c3a2c252c2a672f3b" class="btn-email" onclick="window.location.href='mailto:contact@reselec.fr';">✉️ Envoyer un email</a>
+      <a href="mailto:contact@reselec.fr" class="btn-email">✉️ Envoyer un email</a>
     </div>
   </div>
 </div>
@@ -2273,7 +2273,7 @@
       <span class="opt-icon phone">📞</span>
       Appeler directement
     </a>
-    <a href="/cdn-cgi/l/email-protection#beddd1d0cadfddcafeccdbcddbd2dbdd90d8cc" class="floating-option" onclick="window.location.href='mailto:contact@reselec.fr';">
+    <a href="mailto:contact@reselec.fr" class="floating-option">
       <span class="opt-icon mail">✉️</span>
       Envoyer un email
     </a>
@@ -2298,7 +2298,7 @@
   const floatingDevis = document.getElementById('floatingDevis');
 
   floatingBtn.addEventListener('click', () => {
-    floatingContact.classList.toggle('open');
+    document.getElementById('contactModal').classList.add('open');
   });
 
   // Close when clicking devis link (scrolls to form)

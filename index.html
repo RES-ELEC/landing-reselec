@@ -1665,12 +1665,23 @@
 
   /* ============ RESPONSIVE ============ */
   @media (max-width: 768px) {
-    nav { padding: 8px 12px; justify-content: space-between; }
-    .nav-links { display: flex; }
-    .nav-logo img { height: 40px !important; }
-    .nav-btn { font-size: 0.65rem !important; padding: 6px 10px !important; }
-    .nav-dropdown-menu { min-width: 200px; }
-    .nav-dropdown-menu a { font-size: 0.75rem !important; padding: 8px 14px !important; }
+    nav { padding: 6px 8px; justify-content: space-between; gap: 6px; }
+    .nav-links { display: flex; gap: 0; }
+    .nav-logo { flex-shrink: 0; }
+    .nav-logo img { height: 34px !important; }
+    .nav-btn {
+      font-size: 0.55rem !important;
+      padding: 5px 7px !important;
+      text-align: center;
+      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-btn::before { border-radius: 6px; }
+    .nav-dropdown-menu { min-width: 180px; left: auto; right: 0; transform: translateX(0) translateY(8px); }
+    .nav-dropdown:hover .nav-dropdown-menu { transform: translateX(0) translateY(0); }
+    .nav-dropdown-menu a { font-size: 0.7rem !important; padding: 8px 12px !important; }
     .hero { padding: 120px 24px 80px; }
     .trust-bar { flex-direction: column; gap: 24px; }
     .pain-section, .prestations-section,

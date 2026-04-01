@@ -203,37 +203,42 @@
     align-items: stretch;
     overflow: visible;
   }
-  .nav-links > a,
-  .nav-links > .nav-dropdown > a.nav-gold {
+  .nav-btn {
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 600;
     padding: 12px 28px;
     transition: all 0.3s;
     position: relative;
-    border: 2px solid transparent;
-    background:
-      #07090e padding-box,
-      linear-gradient(90deg, var(--brand-yellow), var(--brand-blue)) border-box;
+    z-index: 1;
   }
-  .nav-links > a.nav-gold,
-  .nav-links > .nav-dropdown > a.nav-gold {
+  .nav-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    padding: 2px;
+    background: linear-gradient(90deg, var(--brand-yellow), var(--brand-blue));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  .nav-btn.nav-gold {
     color: var(--brand-yellow);
   }
-  .nav-links > a.nav-gold:hover,
-  .nav-links > .nav-dropdown > a.nav-gold:hover {
-    background:
-      rgba(234, 179, 8, 0.12) padding-box,
-      linear-gradient(90deg, var(--brand-yellow), var(--brand-blue)) border-box;
+  .nav-btn.nav-gold:hover {
+    background: rgba(234, 179, 8, 0.12);
+    border-radius: 10px;
     color: var(--brand-yellow-light);
   }
-  .nav-links > a.nav-cta {
+  .nav-btn.nav-cta {
     color: white;
-    background:
-      var(--gradient-brand) padding-box,
-      linear-gradient(90deg, var(--brand-yellow), var(--brand-blue)) border-box;
+    background: var(--gradient-brand);
+    border-radius: 10px;
   }
-  .nav-links a.nav-cta:hover {
+  .nav-btn.nav-cta:hover {
     filter: brightness(1.15);
     box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
   }
@@ -1696,7 +1701,7 @@
   </a>
   <div class="nav-links">
     <div class="nav-dropdown">
-      <a href="#prestations" class="nav-gold">Prestations</a>
+      <a href="#prestations" class="nav-btn nav-gold">Prestations</a>
       <div class="nav-dropdown-menu">
         <a href="#presta-ndc"><span class="dd-dot blue"></span>Note de calcul</a>
         <a href="#presta-schema"><span class="dd-dot yellow"></span>Schémas unifilaires</a>
@@ -1708,8 +1713,8 @@
         <a href="#presta-thermo"><span class="dd-dot yellow"></span>Thermographie</a>
       </div>
     </div>
-    <a href="#methode" class="nav-gold">Notre fonctionnement</a>
-    <a href="#devis" class="nav-cta">Demander un devis</a>
+    <a href="#methode" class="nav-btn nav-gold">Notre fonctionnement</a>
+    <a href="#devis" class="nav-btn nav-cta">Demander un devis</a>
   </div>
 </nav>
 
@@ -2111,48 +2116,6 @@
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="testimonials" id="temoignages">
-  <div class="section-header reveal">
-    <div class="section-label yellow">Ils nous font confiance</div>
-    <div class="brand-divider"></div>
-    <h2 class="section-title">Ce que disent nos clients</h2>
-  </div>
-  <div class="testimonial-grid">
-    <div class="testimonial-card reveal">
-      <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text">"Réactifs, précis et pro. On leur envoie le CCTP le lundi, on a le dossier complet le mercredi. Ça change la vie."</p>
-      <div class="testimonial-author">
-        <div class="testimonial-avatar blue">JD</div>
-        <div>
-          <div class="testimonial-name">Julien D.</div>
-          <div class="testimonial-role">Gérant — Électricité du Sud</div>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial-card reveal">
-      <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text">"Enfin un BE qui comprend les contraintes terrain. Les notes de calcul sont carrées, le Consuel passe du premier coup."</p>
-      <div class="testimonial-author">
-        <div class="testimonial-avatar yellow">SM</div>
-        <div>
-          <div class="testimonial-name">Stéphane M.</div>
-          <div class="testimonial-role">Chef d'entreprise — SMP Élec</div>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial-card reveal">
-      <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text">"On a externalisé toute notre partie études chez RES ELEC. Le rapport qualité/prix/délai est imbattable."</p>
-      <div class="testimonial-author">
-        <div class="testimonial-avatar blue">PL</div>
-        <div>
-          <div class="testimonial-name">Philippe L.</div>
-          <div class="testimonial-role">Directeur technique — BTP Alliance</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- DEVIS FORM -->
 <section class="form-section" id="devis">
@@ -2230,11 +2193,6 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-left">© 2026 RES ELEC — Bureau d'études électriques</div>
-  <div class="footer-right">
-    <a href="#">LinkedIn</a>
-    <a href="/cdn-cgi/l/email-protection#b4d7dbdac0d5d7c0f4c6d1c7d1d8d1d79ad2c6">Email</a>
-    <a href="#">Mentions légales</a>
-  </div>
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>

@@ -203,28 +203,31 @@
     align-items: stretch;
     overflow: visible;
   }
-  .nav-links a {
+  .nav-links > a,
+  .nav-links > .nav-dropdown > a.nav-gold {
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 600;
     padding: 12px 28px;
     transition: all 0.3s;
     position: relative;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     background:
-      var(--bg) padding-box,
+      #07090e padding-box,
       linear-gradient(90deg, var(--brand-yellow), var(--brand-blue)) border-box;
   }
-  .nav-links a.nav-gold {
+  .nav-links > a.nav-gold,
+  .nav-links > .nav-dropdown > a.nav-gold {
     color: var(--brand-yellow);
   }
-  .nav-links a.nav-gold:hover {
+  .nav-links > a.nav-gold:hover,
+  .nav-links > .nav-dropdown > a.nav-gold:hover {
     background:
-      rgba(234, 179, 8, 0.08) padding-box,
+      rgba(234, 179, 8, 0.12) padding-box,
       linear-gradient(90deg, var(--brand-yellow), var(--brand-blue)) border-box;
     color: var(--brand-yellow-light);
   }
-  .nav-links a.nav-cta {
+  .nav-links > a.nav-cta {
     color: white;
     background:
       var(--gradient-brand) padding-box,
@@ -270,7 +273,8 @@
     font-size: 0.88rem !important;
     font-weight: 500 !important;
     transition: all 0.2s;
-    border-right: none !important;
+    border: none !important;
+    background: none !important;
   }
   .nav-dropdown-menu a:hover {
     background: rgba(234, 179, 8, 0.08) !important;

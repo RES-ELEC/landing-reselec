@@ -201,12 +201,7 @@
     display: flex;
     gap: 0;
     align-items: stretch;
-    border-radius: 12px;
     overflow: visible;
-    border: 1px solid transparent;
-    background:
-      var(--bg) padding-box,
-      linear-gradient(90deg, var(--brand-yellow), var(--brand-blue)) border-box;
   }
   .nav-links a {
     text-decoration: none;
@@ -215,19 +210,25 @@
     padding: 12px 28px;
     transition: all 0.3s;
     position: relative;
+    border: 1px solid transparent;
+    background:
+      var(--bg) padding-box,
+      linear-gradient(90deg, var(--brand-yellow), var(--brand-blue)) border-box;
   }
   .nav-links a.nav-gold {
     color: var(--brand-yellow);
-    border-right: 1px solid rgba(255,255,255,0.1);
   }
   .nav-links a.nav-gold:hover {
-    background: rgba(234, 179, 8, 0.08);
+    background:
+      rgba(234, 179, 8, 0.08) padding-box,
+      linear-gradient(90deg, var(--brand-yellow), var(--brand-blue)) border-box;
     color: var(--brand-yellow-light);
   }
   .nav-links a.nav-cta {
     color: white;
-    background: var(--gradient-brand);
-    border-radius: 0 11px 11px 0;
+    background:
+      var(--gradient-brand) padding-box,
+      linear-gradient(90deg, var(--brand-yellow), var(--brand-blue)) border-box;
   }
   .nav-links a.nav-cta:hover {
     filter: brightness(1.15);
@@ -799,6 +800,7 @@
 
   .prestation-block {
     margin-bottom: 100px;
+    scroll-margin-top: 120px;
   }
   .prestation-block:last-child {
     margin-bottom: 0;

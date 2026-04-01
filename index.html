@@ -200,11 +200,13 @@
   .nav-links {
     display: flex;
     gap: 0;
-    align-items: center;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid var(--border);
+    align-items: stretch;
     border-radius: 12px;
-    overflow: hidden;
+    overflow: visible;
+    border: 1px solid transparent;
+    background:
+      linear-gradient(rgba(255,255,255,0.04), rgba(255,255,255,0.04)) padding-box,
+      linear-gradient(90deg, var(--brand-yellow), var(--brand-blue)) border-box;
   }
   .nav-links a {
     text-decoration: none;
@@ -216,7 +218,7 @@
   }
   .nav-links a.nav-gold {
     color: var(--brand-yellow);
-    border-right: 1px solid var(--border);
+    border-right: 1px solid rgba(255,255,255,0.1);
   }
   .nav-links a.nav-gold:hover {
     background: rgba(234, 179, 8, 0.1);
@@ -225,11 +227,63 @@
   .nav-links a.nav-cta {
     color: white;
     background: var(--gradient-brand);
+    border-radius: 0 11px 11px 0;
   }
   .nav-links a.nav-cta:hover {
     filter: brightness(1.15);
     box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
   }
+
+  /* ============ DROPDOWN PRESTATIONS ============ */
+  .nav-dropdown {
+    position: relative;
+    display: flex;
+  }
+  .nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    min-width: 260px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-hover);
+    border-radius: 12px;
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+    z-index: 200;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+  .nav-dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px !important;
+    color: var(--text-secondary) !important;
+    font-size: 0.88rem !important;
+    font-weight: 500 !important;
+    transition: all 0.2s;
+    border-right: none !important;
+  }
+  .nav-dropdown-menu a:hover {
+    background: rgba(234, 179, 8, 0.08) !important;
+    color: var(--brand-yellow) !important;
+    padding-left: 24px !important;
+  }
+  .nav-dropdown-menu a .dd-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .nav-dropdown-menu a .dd-dot.yellow { background: var(--brand-yellow); }
+  .nav-dropdown-menu a .dd-dot.blue { background: var(--brand-blue-light); }
 
   /* ============ HERO ============ */
   .hero {
@@ -1635,7 +1689,19 @@
     <img src="logo-reselec.png" alt="RES ELEC" style="height:92px; width:auto;">
   </a>
   <div class="nav-links">
-    <a href="#prestations" class="nav-gold">Prestations</a>
+    <div class="nav-dropdown">
+      <a href="#prestations" class="nav-gold">Prestations</a>
+      <div class="nav-dropdown-menu">
+        <a href="#presta-ndc"><span class="dd-dot blue"></span>Note de calcul</a>
+        <a href="#presta-schema"><span class="dd-dot yellow"></span>Schémas unifilaires</a>
+        <a href="#presta-plan"><span class="dd-dot blue"></span>Plans d'implantation</a>
+        <a href="#presta-syno"><span class="dd-dot yellow"></span>Synoptique</a>
+        <a href="#presta-bilan"><span class="dd-dot blue"></span>Bilan de puissance</a>
+        <a href="#presta-analyseur"><span class="dd-dot yellow"></span>Analyseur de réseau</a>
+        <a href="#presta-chiffrage"><span class="dd-dot blue"></span>Chiffrage</a>
+        <a href="#presta-thermo"><span class="dd-dot yellow"></span>Thermographie</a>
+      </div>
+    </div>
     <a href="#methode" class="nav-gold">Notre fonctionnement</a>
     <a href="#devis" class="nav-cta">Demander un devis</a>
   </div>
@@ -1725,7 +1791,7 @@
   </div>
 
   <!-- 1 — NOTE DE CALCUL -->
-  <div class="prestation-block reveal">
+  <div class="prestation-block reveal" id="presta-ndc">
     <div class="prestation-header">
       <div class="prestation-tag blue"><span class="tag-dot"></span> Note de calcul</div>
       <h3>Note de calcul CANECO</h3>
@@ -1742,7 +1808,7 @@
   </div>
 
   <!-- 2 — SCHÉMA UNIFILAIRE -->
-  <div class="prestation-block reveal">
+  <div class="prestation-block reveal" id="presta-schema">
     <div class="prestation-header">
       <div class="prestation-tag yellow"><span class="tag-dot"></span> Schéma unifilaire</div>
       <h3>Schémas unifilaires AutoCAD</h3>
@@ -1811,7 +1877,7 @@
   </div>
 
   <!-- 3 — PLAN D'IMPLANTATION -->
-  <div class="prestation-block reveal">
+  <div class="prestation-block reveal" id="presta-plan">
     <div class="prestation-header">
       <div class="prestation-tag blue"><span class="tag-dot"></span> Plan d'implantation</div>
       <h3>Plans d'implantation de tout type de projet</h3>
@@ -1841,7 +1907,7 @@
   </div>
 
   <!-- 4 — SYNOPTIQUE -->
-  <div class="prestation-block reveal">
+  <div class="prestation-block reveal" id="presta-syno">
     <div class="prestation-header">
       <div class="prestation-tag yellow"><span class="tag-dot"></span> Synoptique</div>
       <h3>Synoptique général de l'installation</h3>
@@ -1858,7 +1924,7 @@
   </div>
 
   <!-- 5 — BILAN DE PUISSANCE -->
-  <div class="prestation-block reveal">
+  <div class="prestation-block reveal" id="presta-bilan">
     <div class="prestation-header">
       <div class="prestation-tag blue"><span class="tag-dot"></span> Bilan de puissance</div>
       <h3>Bilan de puissance détaillé</h3>
@@ -1875,7 +1941,7 @@
   </div>
 
   <!-- 6 — ANALYSEUR DE RÉSEAU -->
-  <div class="prestation-block reveal">
+  <div class="prestation-block reveal" id="presta-analyseur">
     <div class="prestation-header">
       <div class="prestation-tag yellow"><span class="tag-dot"></span> Analyseur de réseau</div>
       <h3>Pose d'analyseur & analyse de données</h3>
@@ -1894,7 +1960,7 @@
   </div>
 
   <!-- 7 — CHIFFRAGE DE CHANTIER -->
-  <div class="prestation-block reveal">
+  <div class="prestation-block reveal" id="presta-chiffrage">
     <div class="prestation-header">
       <div class="prestation-tag blue"><span class="tag-dot"></span> Chiffrage</div>
       <h3>Chiffrage de chantier en électricité</h3>
@@ -1914,7 +1980,7 @@
   </div>
 
   <!-- 8 — THERMOGRAPHIE -->
-  <div class="prestation-block reveal">
+  <div class="prestation-block reveal" id="presta-thermo">
     <div class="prestation-header">
       <div class="prestation-tag yellow"><span class="tag-dot"></span> Thermographie</div>
       <h3>Thermographie infrarouge sur site</h3>

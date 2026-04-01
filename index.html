@@ -206,6 +206,11 @@
     transition: color 0.3s;
   }
   .nav-links a:hover { color: var(--text-primary); }
+  .nav-links a.nav-gold {
+    color: var(--brand-yellow);
+    font-size: 1.05rem;
+  }
+  .nav-links a.nav-gold:hover { color: var(--brand-yellow-light); }
   .nav-cta {
     background: var(--gradient-brand) !important;
     color: white !important;
@@ -1588,7 +1593,7 @@
 
   /* ============ RESPONSIVE ============ */
   @media (max-width: 768px) {
-    nav { padding: 12px 20px; }
+    nav { padding: 12px 20px; justify-content: center; }
     .nav-links { display: none; }
     .hero { padding: 120px 24px 80px; }
     .trust-bar { flex-direction: column; gap: 24px; }
@@ -1623,9 +1628,8 @@
     <img src="logo-reselec.png" alt="RES ELEC" style="height:46px; width:auto;">
   </a>
   <div class="nav-links">
-    <a href="#prestations">Prestations</a>
-    <a href="#methode">Méthode</a>
-    <a href="#temoignages">Avis</a>
+    <a href="#prestations" class="nav-gold">Prestations</a>
+    <a href="#methode" class="nav-gold">Notre fonctionnement</a>
     <a href="#devis" class="nav-cta">Demander un devis</a>
   </div>
 </nav>
@@ -1986,7 +1990,7 @@
 <!-- PROCESS -->
 <section class="process-section" id="methode">
   <div class="section-header reveal">
-    <div class="section-label">Notre méthode</div>
+    <div class="section-label">Notre fonctionnement</div>
     <div class="brand-divider"></div>
     <h2 class="section-title">Simple, rapide, efficace</h2>
     <p class="section-subtitle">De votre demande à la livraison, en 4 étapes claires.</p>

@@ -2309,4 +2309,16 @@
   // Close when clicking outside
   document.addEventListener('click', (e) => {
     if (!floatingContact.contains(e.target)) {
-      floatingContact.classList.re
+      floatingContact.classList.remove('open');
+    }
+  });
+
+  // Close modal when clicking overlay
+  document.getElementById('contactModal').addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) {
+      e.currentTarget.classList.remove('open');
+    }
+  });
+</script>
+</body>
+</html>

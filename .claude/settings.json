@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"c:/Users/chapo/Desktop/Landing RES ELEC\" show HEAD:index.html)",
+      "Bash(git -C \"c:/Users/chapo/Desktop/Landing RES ELEC\" show HEAD~1:index.html)",
+      "Bash(git -C \"c:/Users/chapo/Desktop/Landing RES ELEC\" show HEAD~4:index.html)"
+    ]
+  }
+}

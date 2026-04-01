@@ -197,34 +197,38 @@
   }
   .logo-placeholder .elec { color: var(--brand-yellow-light); }
 
-  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links {
+    display: flex;
+    gap: 0;
+    align-items: center;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
   .nav-links a {
     text-decoration: none;
-    color: var(--text-secondary);
-    font-size: 0.88rem;
-    font-weight: 500;
-    transition: color 0.3s;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 12px 28px;
+    transition: all 0.3s;
+    position: relative;
   }
-  .nav-links a:hover { color: var(--text-primary); }
   .nav-links a.nav-gold {
     color: var(--brand-yellow);
-    font-size: 1.05rem;
-    border: 1px solid var(--brand-yellow);
-    padding: 10px 26px;
-    border-radius: 50px;
+    border-right: 1px solid var(--border);
   }
-  .nav-links a.nav-gold:hover { color: var(--brand-yellow-light); border-color: var(--brand-yellow-light); }
-  .nav-cta {
-    background: var(--gradient-brand) !important;
-    color: white !important;
-    padding: 10px 26px;
-    border-radius: 50px;
-    font-weight: 600 !important;
-    transition: transform 0.3s, box-shadow 0.3s !important;
+  .nav-links a.nav-gold:hover {
+    background: rgba(234, 179, 8, 0.1);
+    color: var(--brand-yellow-light);
   }
-  .nav-cta:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.3);
+  .nav-links a.nav-cta {
+    color: white;
+    background: var(--gradient-brand);
+  }
+  .nav-links a.nav-cta:hover {
+    filter: brightness(1.15);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
   }
 
   /* ============ HERO ============ */
@@ -1641,7 +1645,7 @@
 <section class="hero">
   <h1>
     Vos études<br>
-    <span class="text-yellow">livrées</span> <span class="text-blue">rapidement</span>
+    livrées rapidement
   </h1>
 
   <p class="hero-sub">

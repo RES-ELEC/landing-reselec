@@ -210,33 +210,20 @@
     padding: 12px 28px;
     transition: all 0.3s;
     position: relative;
-    z-index: 1;
-  }
-  .nav-btn::before {
-    content: '';
-    position: absolute;
-    inset: 0;
+    border: 2px solid var(--brand-yellow);
     border-radius: 10px;
-    padding: 2px;
-    background: linear-gradient(90deg, var(--brand-yellow), var(--brand-blue));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    pointer-events: none;
   }
   .nav-btn.nav-gold {
     color: var(--brand-yellow);
   }
   .nav-btn.nav-gold:hover {
     background: rgba(234, 179, 8, 0.12);
-    border-radius: 10px;
     color: var(--brand-yellow-light);
   }
   .nav-btn.nav-cta {
     color: white;
     background: var(--gradient-brand);
-    border-radius: 10px;
+    border-color: var(--brand-yellow);
   }
   .nav-btn.nav-cta:hover {
     filter: brightness(1.15);
@@ -270,30 +257,20 @@
     transform: translateX(-50%) translateY(0);
   }
   .nav-dropdown-menu a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    display: block;
     padding: 10px 20px !important;
-    color: var(--text-secondary) !important;
+    color: var(--brand-yellow) !important;
     font-size: 0.88rem !important;
     font-weight: 500 !important;
+    text-decoration: none !important;
     transition: all 0.2s;
     border: none !important;
     background: none !important;
   }
   .nav-dropdown-menu a:hover {
     background: rgba(234, 179, 8, 0.08) !important;
-    color: var(--brand-yellow) !important;
-    padding-left: 24px !important;
+    color: var(--brand-yellow-light) !important;
   }
-  .nav-dropdown-menu a .dd-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-  .nav-dropdown-menu a .dd-dot.yellow { background: var(--brand-yellow); }
-  .nav-dropdown-menu a .dd-dot.blue { background: var(--brand-blue-light); }
 
   /* ============ HERO ============ */
   .hero {
@@ -1678,7 +1655,7 @@
       align-items: center;
       justify-content: center;
     }
-    .nav-btn::before { border-radius: 6px; }
+    .nav-btn { border-radius: 6px; }
     .nav-dropdown-menu { min-width: 180px; left: auto; right: 0; transform: translateX(0) translateY(8px); }
     .nav-dropdown:hover .nav-dropdown-menu { transform: translateX(0) translateY(0); }
     .nav-dropdown-menu a { font-size: 0.7rem !important; padding: 8px 12px !important; }
@@ -1716,16 +1693,16 @@
   </a>
   <div class="nav-links">
     <div class="nav-dropdown">
-      <a href="#prestations" class="nav-btn nav-gold">Prestations</a>
+      <a href="#prestations" class="nav-btn nav-gold" onclick="event.preventDefault();">Prestations</a>
       <div class="nav-dropdown-menu">
-        <a href="#presta-ndc"><span class="dd-dot blue"></span>Note de calcul</a>
-        <a href="#presta-schema"><span class="dd-dot yellow"></span>Schémas unifilaires</a>
-        <a href="#presta-plan"><span class="dd-dot blue"></span>Plans d'implantation</a>
-        <a href="#presta-syno"><span class="dd-dot yellow"></span>Synoptique</a>
-        <a href="#presta-bilan"><span class="dd-dot blue"></span>Bilan de puissance</a>
-        <a href="#presta-analyseur"><span class="dd-dot yellow"></span>Analyseur de réseau</a>
-        <a href="#presta-chiffrage"><span class="dd-dot blue"></span>Chiffrage</a>
-        <a href="#presta-thermo"><span class="dd-dot yellow"></span>Thermographie</a>
+        <a href="#presta-ndc">Note de calcul</a>
+        <a href="#presta-schema">Schémas unifilaires</a>
+        <a href="#presta-plan">Plans d'implantation</a>
+        <a href="#presta-syno">Synoptique</a>
+        <a href="#presta-bilan">Bilan de puissance</a>
+        <a href="#presta-analyseur">Analyseur de réseau</a>
+        <a href="#presta-chiffrage">Chiffrage</a>
+        <a href="#presta-thermo">Thermographie</a>
       </div>
     </div>
     <a href="#methode" class="nav-btn nav-gold">Notre fonctionnement</a>

@@ -596,12 +596,12 @@
     margin-bottom: 32px;
   }
   .logos-label {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 1.4rem;
-    color: var(--text-primary);
-    letter-spacing: 0.5px;
-    text-transform: none;
-    font-weight: 800;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
   }
 
   .logos-track-wrapper {
@@ -649,15 +649,15 @@
 
   .logo-item {
     flex-shrink: 0;
-    height: 90px;
-    min-width: 200px;
-    padding: 0 32px;
+    height: 48px;
+    min-width: 120px;
+    padding: 0 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 10px;
     transition: all 0.3s;
   }
   .logo-item:hover {
@@ -672,18 +672,20 @@
     white-space: nowrap;
   }
   .logo-item img {
-    height: 70px;
+    height: 28px;
     width: auto;
-    opacity: 0.85;
+    opacity: 0.6;
+    filter: grayscale(100%) brightness(1.8);
     transition: all 0.3s;
   }
   .logo-item:hover img {
     opacity: 1;
+    filter: grayscale(0%) brightness(1);
   }
 
   @media (max-width: 768px) {
     .logos-slide { gap: 32px; }
-    .logo-item { min-width: 140px; padding: 0 20px; height: 70px; }
+    .logo-item { min-width: 100px; padding: 0 16px; height: 42px; }
     .logos-fade { width: 50px; }
   }
 
@@ -956,6 +958,7 @@
     overflow: hidden;
     border: 1px solid var(--border);
     background: var(--bg-card);
+    aspect-ratio: 16/9;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .prestation-photo:hover {
@@ -989,7 +992,8 @@
   }
   .prestation-photo img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
   }
 
@@ -1013,88 +1017,6 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     white-space: nowrap;
-  }
-
-  /* ============ CAROUSEL ============ */
-  .carousel {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    background: var(--bg-card);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .carousel:hover {
-    border-color: var(--border-hover);
-  }
-  .carousel-inner {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-  }
-  .carousel-track {
-    display: flex;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    width: 100%;
-  }
-  .carousel-slide {
-    min-width: 100%;
-    width: 100%;
-    flex-shrink: 0;
-  }
-  .carousel-slide img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid var(--border-hover);
-    background: rgba(7, 9, 14, 0.85);
-    backdrop-filter: blur(12px);
-    color: var(--text-primary);
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-    z-index: 10;
-  }
-  .carousel-btn:hover {
-    background: var(--brand-blue);
-    border-color: var(--brand-blue);
-  }
-  .carousel-btn.prev { left: 12px; }
-  .carousel-btn.next { right: 12px; }
-  .carousel-dots {
-    position: absolute;
-    bottom: 14px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-    z-index: 10;
-  }
-  .carousel-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--text-muted);
-    opacity: 0.4;
-    cursor: pointer;
-    transition: all 0.3s;
-    border: none;
-  }
-  .carousel-dot.active {
-    opacity: 1;
-    background: var(--brand-yellow);
-    transform: scale(1.3);
   }
 
   /* ============ PROCESS ============ */
@@ -1316,259 +1238,6 @@
   }
   .cta-guarantee .check { color: var(--accent-green); font-size: 1rem; }
 
-  /* ============ PARTNERS ============ */
-  .partners-section {
-    padding: 120px 40px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .partners-content {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .partners-text > p {
-    font-size: 1.05rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 40px;
-    text-align: center;
-    font-weight: 300;
-  }
-  .partners-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-bottom: 40px;
-  }
-  .partner-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 36px 28px;
-    text-align: center;
-    transition: all 0.4s;
-    position: relative;
-    overflow: hidden;
-  }
-  .partner-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: var(--gradient-accent);
-    opacity: 0;
-    transition: opacity 0.4s;
-  }
-  .partner-card:hover {
-    border-color: rgba(37, 99, 235, 0.2);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-  }
-  .partner-card:hover::before { opacity: 1; }
-  .partner-icon {
-    font-size: 2.2rem;
-    margin-bottom: 18px;
-    display: block;
-  }
-  .partner-card h4 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: var(--text-primary);
-  }
-  .partner-card p {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    line-height: 1.65;
-  }
-  .partners-note {
-    display: flex;
-    align-items: flex-start;
-    gap: 18px;
-    background: linear-gradient(135deg, rgba(16, 19, 28, 0.9), rgba(234, 179, 8, 0.06));
-    border: 1px solid rgba(234, 179, 8, 0.15);
-    border-radius: var(--radius);
-    padding: 28px 32px;
-  }
-  .partners-note-icon {
-    font-size: 1.5rem;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .partners-note p {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    font-style: italic;
-  }
-
-  /* ============ CONTACT MODAL ============ */
-  .contact-modal-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 200;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(8px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-  .contact-modal-overlay.open {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .contact-modal {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 24px;
-    padding: 48px;
-    max-width: 440px;
-    width: 90%;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    transform: scale(0.95) translateY(10px);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .contact-modal-overlay.open .contact-modal {
-    transform: scale(1) translateY(0);
-  }
-  .contact-modal::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: var(--gradient-accent);
-  }
-  .contact-modal-close {
-    position: absolute;
-    top: 16px; right: 16px;
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    border: 1px solid var(--border);
-    background: var(--bg-surface);
-    color: var(--text-secondary);
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-  }
-  .contact-modal-close:hover {
-    border-color: var(--border-hover);
-    color: var(--text-primary);
-    background: var(--bg-card-hover);
-  }
-  .contact-modal-avatar {
-    width: 72px; height: 72px;
-    border-radius: 50%;
-    background: var(--gradient-brand);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: white;
-    margin: 0 auto 20px;
-    box-shadow: 0 8px 32px rgba(37, 99, 235, 0.25);
-  }
-  .contact-modal h3 {
-    font-size: 1.4rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    margin-bottom: 6px;
-  }
-  .contact-modal .contact-role {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin-bottom: 8px;
-    font-weight: 500;
-  }
-  .contact-modal .contact-company {
-    font-size: 0.82rem;
-    color: var(--brand-blue-light);
-    font-weight: 600;
-    margin-bottom: 32px;
-  }
-  .contact-modal-phone {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 20px 28px;
-    margin-bottom: 20px;
-    transition: all 0.3s;
-  }
-  .contact-modal-phone:hover {
-    border-color: rgba(37, 99, 235, 0.3);
-    background: rgba(37, 99, 235, 0.05);
-  }
-  .contact-modal-phone .phone-icon {
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    background: var(--gradient-brand);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    flex-shrink: 0;
-  }
-  .contact-modal-phone .phone-number {
-    font-size: 1.35rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    color: var(--text-primary);
-    font-family: 'IBM Plex Mono', monospace;
-  }
-  .contact-modal-actions {
-    display: flex;
-    gap: 12px;
-  }
-  .contact-modal-actions a {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 14px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    transition: all 0.3s;
-  }
-  .contact-modal-actions .btn-call {
-    background: var(--gradient-brand);
-    color: white;
-  }
-  .contact-modal-actions .btn-call:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.3);
-  }
-  .contact-modal-actions .btn-email {
-    background: var(--bg-surface);
-    color: var(--text-primary);
-    border: 1px solid var(--border);
-  }
-  .contact-modal-actions .btn-email:hover {
-    border-color: var(--border-hover);
-    background: var(--bg-card-hover);
-    transform: translateY(-1px);
-  }
-
-  @media (max-width: 768px) {
-    .contact-modal { padding: 36px 24px; }
-    .contact-modal-phone .phone-number { font-size: 1.15rem; }
-    .contact-modal-actions { flex-direction: column; }
-  }
-
   /* ============ FOOTER ============ */
   footer {
     padding: 40px;
@@ -1594,10 +1263,7 @@
     .trust-bar { flex-direction: column; gap: 24px; }
     .pain-section, .prestations-section,
     .process-section, .testimonials,
-    .cta-section, .form-section,
-    .partners-section { padding: 80px 20px; }
-    .partners-grid { grid-template-columns: 1fr; }
-    .partners-note { flex-direction: column; gap: 12px; padding: 24px 20px; }
+    .cta-section, .form-section { padding: 80px 20px; }
     .cta-box { padding: 48px 28px; }
     .devis-form { padding: 32px 24px; }
     .form-row { grid-template-columns: 1fr; }
@@ -1620,7 +1286,8 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <img src="logo-reselec.png" alt="RES ELEC" style="height:46px; width:auto;">
+    <!-- REMPLACER par : <img src="votre-logo.png" alt="RES ELEC" style="height:42px;"> -->
+    <img src="logo-reselec.png" alt="RES ELEC" style="height:42px;width:auto;">
   </a>
   <div class="nav-links">
     <a href="#prestations">Prestations</a>
@@ -1632,22 +1299,33 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-badge">
+    <span class="badge-icon">
+      <span class="badge-bolt">⚡</span>
+    </span>
+    <span class="badge-separator"></span>
+    <span class="badge-text"><span style="color:var(--brand-yellow)">Bureau d'études</span> <span style="color:var(--brand-blue-light)">électriques</span></span>
+  </div>
+
+  <!-- LOGO : remplacer par <img src="votre-logo.png" alt="RES ELEC" style="height:80px;width:auto;"> -->
+  <div class="hero-logo" style="margin-bottom:32px; animation: fadeInUp 0.8s ease-out 0.05s both;">
+    <div style="height:80px;padding:0 32px;background:linear-gradient(135deg,var(--brand-blue),var(--brand-yellow));border-radius:16px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:1.6rem;color:white;letter-spacing:-0.5px;"><img src="logo-reselec.png" alt="RES ELEC" style="height:80px;width:auto;">
+  </div>
+
   <h1>
     Vos études<br>
     <span class="text-yellow">livrées</span> <span class="text-blue">rapidement</span>
   </h1>
 
   <p class="hero-sub">
-    Notes de calcul, schémas unifilaires, plans d'implantation, synoptiques, bilans de puissance, pose d'analyseurs de réseau, chiffrage de chantier et thermographie — réalisés par des experts forts de plus de 10 ans d'expérience en bureau d'études. Concentrez-vous sur vos chantiers, on gère la partie études.
+    Notes de calcul, schémas unifilaires, plans d'implantation, synoptiques, bilans de puissance, pose d'analyseurs de réseau, chiffrage de chantier et thermographie — réalisés par des experts forts de plus de 10 ans d'études. Concentrez-vous sur vos chantiers, on gère la partie études.
   </p>
 
   <div class="hero-buttons">
     <a href="#devis" class="btn-primary btn-yellow">
       Demander un devis gratuit <span class="arrow">→</span>
     </a>
-    <a href="#" class="btn-primary" onclick="event.preventDefault(); document.getElementById('contactModal').classList.add('open');">
-      📞 Nous contacter — 06 89 63 44 87
-    </a>
+    <a href="#prestations" class="btn-secondary">Voir nos prestations</a>
   </div>
 
   <div class="trust-bar">
@@ -1679,26 +1357,26 @@
     <div class="logos-track">
       <!-- Dupliquer le contenu pour le scroll infini -->
       <div class="logos-slide">
-        <div class="logo-item"><img src="logo%20clients/EQUANS.png" alt="Equans"></div>
-        <div class="logo-item"><img src="logo%20clients/RATP.png" alt="RATP"></div>
-        <div class="logo-item"><img src="logo%20clients/ORANGE.png" alt="Orange"></div>
-        <div class="logo-item"><img src="logo%20clients/MAIRIE%20PARIS.png" alt="Mairie de Paris"></div>
-        <div class="logo-item"><img src="logo%20clients/REOLIAN.png" alt="Reolian"></div>
-        <div class="logo-item"><img src="logo%20clients/FIBRELEC.png" alt="Fibrelec"></div>
-        <div class="logo-item"><img src="logo%20clients/CODE%20ELEC.png" alt="Code Elec"></div>
-        <div class="logo-item"><img src="logo%20clients/ETT.png" alt="ETT"></div>
-        <div class="logo-item"><img src="logo%20clients/ZE%20WATT.png" alt="Ze Watt"></div>
+        <!-- REMPLACER chaque .logo-item par vos vrais logos :
+             <img src="logo-client.png" alt="Nom Client"> -->
+        <div class="logo-item"><span>Client 1</span></div>
+        <div class="logo-item"><span>Client 2</span></div>
+        <div class="logo-item"><span>Client 3</span></div>
+        <div class="logo-item"><span>Client 4</span></div>
+        <div class="logo-item"><span>Client 5</span></div>
+        <div class="logo-item"><span>Client 6</span></div>
+        <div class="logo-item"><span>Client 7</span></div>
+        <div class="logo-item"><span>Client 8</span></div>
       </div>
       <div class="logos-slide">
-        <div class="logo-item"><img src="logo%20clients/EQUANS.png" alt="Equans"></div>
-        <div class="logo-item"><img src="logo%20clients/RATP.png" alt="RATP"></div>
-        <div class="logo-item"><img src="logo%20clients/ORANGE.png" alt="Orange"></div>
-        <div class="logo-item"><img src="logo%20clients/MAIRIE%20PARIS.png" alt="Mairie de Paris"></div>
-        <div class="logo-item"><img src="logo%20clients/REOLIAN.png" alt="Reolian"></div>
-        <div class="logo-item"><img src="logo%20clients/FIBRELEC.png" alt="Fibrelec"></div>
-        <div class="logo-item"><img src="logo%20clients/CODE%20ELEC.png" alt="Code Elec"></div>
-        <div class="logo-item"><img src="logo%20clients/ETT.png" alt="ETT"></div>
-        <div class="logo-item"><img src="logo%20clients/ZE%20WATT.png" alt="Ze Watt"></div>
+        <div class="logo-item"><span>Client 1</span></div>
+        <div class="logo-item"><span>Client 2</span></div>
+        <div class="logo-item"><span>Client 3</span></div>
+        <div class="logo-item"><span>Client 4</span></div>
+        <div class="logo-item"><span>Client 5</span></div>
+        <div class="logo-item"><span>Client 6</span></div>
+        <div class="logo-item"><span>Client 7</span></div>
+        <div class="logo-item"><span>Client 8</span></div>
       </div>
     </div>
   </div>
@@ -1707,7 +1385,7 @@
 <!-- ============ PRESTATIONS — MERGED SERVICES + VIDEOS ============ -->
 <section class="prestations-section" id="prestations">
   <div class="section-header reveal">
-    <div class="section-label" style="font-size:1.6rem; color:var(--brand-yellow); font-weight:800;">Nos prestations</div>
+    <div class="section-label">Nos prestations</div>
     <div class="brand-divider"></div>
     <h2 class="section-title">Nos études illustrées</h2>
     <p class="section-subtitle">Découvrez ce qu'on produit pour vous. Scrollez pour voir un exemple concret de chaque prestation.</p>
@@ -1717,7 +1395,7 @@
   <div class="prestation-block reveal">
     <div class="prestation-header">
       <div class="prestation-tag blue"><span class="tag-dot"></span> Note de calcul</div>
-      <h3>Note de calcul CANECO</h3>
+      <h3>Dimensionnement Caneco BT</h3>
       <p>Notes de calcul complètes générées sous Caneco : vérification des protections, sélectivité, chutes de tension et courants de court-circuit. Le document qui valide votre installation.</p>
       <div class="prestation-features">
         <span class="prestation-feat"><span class="dot-blue">●</span> Calcul Caneco certifié</span>
@@ -1726,7 +1404,12 @@
       </div>
     </div>
     <div class="prestation-photo blue-glow">
-      <img src="photos%20prestas/ndc1.png" alt="Note de calcul Caneco">
+      <!-- REMPLACER par : <img src="votre-photo-note-calcul.jpg" alt="Note de calcul Caneco"> -->
+      <div class="photo-placeholder">
+        <div class="preview-grid"></div>
+        <span class="photo-icon">📄</span>
+        <span class="photo-label">Photo — Note de calcul</span>
+      </div>
     </div>
   </div>
 
@@ -1734,13 +1417,12 @@
   <div class="prestation-block reveal">
     <div class="prestation-header">
       <div class="prestation-tag yellow"><span class="tag-dot"></span> Schéma unifilaire</div>
-      <h3>Schémas unifilaires AutoCAD</h3>
+      <h3>Schémas unifilaires détaillés</h3>
       <p>Schémas détaillés de chaque tableau avec protections, calibres, sections de câbles et caractéristiques de chaque départ. Représentation des schémas de commandes : borniers, arrêts d'urgence, schémas de commandes contacteurs, etc.</p>
       <div class="prestation-features">
         <span class="prestation-feat"><span class="dot-yellow">●</span> Conforme NFC 15-100</span>
         <span class="prestation-feat"><span class="dot-yellow">●</span> Protections dimensionnées</span>
         <span class="prestation-feat"><span class="dot-yellow">●</span> Prêt pour le Consuel</span>
-        <span class="prestation-feat"><span class="dot-yellow">●</span> Livraison PDF + DWG</span>
       </div>
     </div>
 
@@ -1750,22 +1432,22 @@
       <span class="sub-label-text">Puissance</span>
       <span class="sub-label-line"></span>
     </div>
-    <div class="carousel yellow-glow" id="carousel-puissance" style="margin-bottom: 32px;">
-      <div class="carousel-inner">
-        <div class="carousel-track">
-          <div class="carousel-slide"><img src="photos%20prestas/sch1.png" alt="Schéma puissance 1"></div>
-          <div class="carousel-slide"><img src="photos%20prestas/sch2.png" alt="Schéma puissance 2"></div>
-          <div class="carousel-slide"><img src="photos%20prestas/sch3.png" alt="Schéma puissance 3"></div>
-          <div class="carousel-slide"><img src="photos%20prestas/sch3b.png" alt="Schéma puissance 4"></div>
-        </div>
+    <div class="prestation-preview yellow-glow" style="margin-bottom: 32px;">
+      <div class="preview-toolbar">
+        <span class="toolbar-dot"></span>
+        <span class="toolbar-dot"></span>
+        <span class="toolbar-dot"></span>
+        <span class="toolbar-title">schema_puissance_TGBT.dwg — AutoCAD</span>
       </div>
-      <button class="carousel-btn prev" onclick="moveCarousel('carousel-puissance', -1)">‹</button>
-      <button class="carousel-btn next" onclick="moveCarousel('carousel-puissance', 1)">›</button>
-      <div class="carousel-dots">
-        <button class="carousel-dot active" onclick="goToSlide('carousel-puissance', 0)"></button>
-        <button class="carousel-dot" onclick="goToSlide('carousel-puissance', 1)"></button>
-        <button class="carousel-dot" onclick="goToSlide('carousel-puissance', 2)"></button>
-        <button class="carousel-dot" onclick="goToSlide('carousel-puissance', 3)"></button>
+      <div class="preview-content">
+        <div class="preview-grid"></div>
+        <div class="preview-play yellow">
+          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+        <div class="preview-hint">
+          <div class="scroll-icon"><span></span></div>
+          Voir un exemple — partie puissance
+        </div>
       </div>
     </div>
 
@@ -1775,26 +1457,22 @@
       <span class="sub-label-text">Commande</span>
       <span class="sub-label-line"></span>
     </div>
-    <div class="carousel yellow-glow" id="carousel-commande">
-      <div class="carousel-inner">
-        <div class="carousel-track">
-          <div class="carousel-slide"><img src="photos%20prestas/sch4.png" alt="Schéma commande 1"></div>
-          <div class="carousel-slide"><img src="photos%20prestas/sch5.png" alt="Schéma commande 2"></div>
-          <div class="carousel-slide"><img src="photos%20prestas/sch6.png" alt="Schéma commande 3"></div>
-          <div class="carousel-slide"><img src="photos%20prestas/sch7.png" alt="Schéma commande 4"></div>
-          <div class="carousel-slide"><img src="photos%20prestas/sdpp.png" alt="Schéma commande 5"></div>
-          <div class="carousel-slide"><img src="photos%20prestas/sdg.png" alt="Schéma commande 6"></div>
-        </div>
+    <div class="prestation-preview yellow-glow">
+      <div class="preview-toolbar">
+        <span class="toolbar-dot"></span>
+        <span class="toolbar-dot"></span>
+        <span class="toolbar-dot"></span>
+        <span class="toolbar-title">schema_commande.dwg — AutoCAD</span>
       </div>
-      <button class="carousel-btn prev" onclick="moveCarousel('carousel-commande', -1)">‹</button>
-      <button class="carousel-btn next" onclick="moveCarousel('carousel-commande', 1)">›</button>
-      <div class="carousel-dots">
-        <button class="carousel-dot active" onclick="goToSlide('carousel-commande', 0)"></button>
-        <button class="carousel-dot" onclick="goToSlide('carousel-commande', 1)"></button>
-        <button class="carousel-dot" onclick="goToSlide('carousel-commande', 2)"></button>
-        <button class="carousel-dot" onclick="goToSlide('carousel-commande', 3)"></button>
-        <button class="carousel-dot" onclick="goToSlide('carousel-commande', 4)"></button>
-        <button class="carousel-dot" onclick="goToSlide('carousel-commande', 5)"></button>
+      <div class="preview-content">
+        <div class="preview-grid"></div>
+        <div class="preview-play yellow">
+          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+        <div class="preview-hint">
+          <div class="scroll-icon"><span></span></div>
+          Voir un exemple — partie commande
+        </div>
       </div>
     </div>
   </div>
@@ -1811,20 +1489,22 @@
         <span class="prestation-feat"><span class="dot-blue">●</span> Format DWG + PDF</span>
       </div>
     </div>
-    <div class="carousel blue-glow" id="carousel-plans">
-      <div class="carousel-inner">
-        <div class="carousel-track">
-          <div class="carousel-slide"><img src="photos%20prestas/pl1.png" alt="Plan d'implantation 1"></div>
-          <div class="carousel-slide"><img src="photos%20prestas/pl2.png" alt="Plan d'implantation 2"></div>
-          <div class="carousel-slide"><img src="photos%20prestas/pl3.png" alt="Plan d'implantation 3"></div>
-        </div>
+    <div class="prestation-preview blue-glow">
+      <div class="preview-toolbar">
+        <span class="toolbar-dot"></span>
+        <span class="toolbar-dot"></span>
+        <span class="toolbar-dot"></span>
+        <span class="toolbar-title">plan_implantation_RDC.dwg — AutoCAD</span>
       </div>
-      <button class="carousel-btn prev" onclick="moveCarousel('carousel-plans', -1)">‹</button>
-      <button class="carousel-btn next" onclick="moveCarousel('carousel-plans', 1)">›</button>
-      <div class="carousel-dots">
-        <button class="carousel-dot active" onclick="goToSlide('carousel-plans', 0)"></button>
-        <button class="carousel-dot" onclick="goToSlide('carousel-plans', 1)"></button>
-        <button class="carousel-dot" onclick="goToSlide('carousel-plans', 2)"></button>
+      <div class="preview-content">
+        <div class="preview-grid"></div>
+        <div class="preview-play blue">
+          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+        <div class="preview-hint">
+          <div class="scroll-icon"><span></span></div>
+          Voir un exemple de plan d'implantation
+        </div>
       </div>
     </div>
   </div>
@@ -1842,7 +1522,12 @@
       </div>
     </div>
     <div class="prestation-photo yellow-glow">
-      <img src="photos%20prestas/sn1.png" alt="Synoptique général">
+      <!-- REMPLACER par : <img src="votre-photo-synoptique.jpg" alt="Synoptique"> -->
+      <div class="photo-placeholder">
+        <div class="preview-grid"></div>
+        <span class="photo-icon">🔌</span>
+        <span class="photo-label">Photo — Synoptique</span>
+      </div>
     </div>
   </div>
 
@@ -1859,7 +1544,12 @@
       </div>
     </div>
     <div class="prestation-photo blue-glow">
-      <img src="photos%20prestas/bp1.png" alt="Bilan de puissance">
+      <!-- REMPLACER par : <img src="votre-photo-bilan.jpg" alt="Bilan de puissance"> -->
+      <div class="photo-placeholder">
+        <div class="preview-grid"></div>
+        <span class="photo-icon">📊</span>
+        <span class="photo-label">Photo — Bilan de puissance</span>
+      </div>
     </div>
   </div>
 
@@ -1868,7 +1558,7 @@
     <div class="prestation-header">
       <div class="prestation-tag yellow"><span class="tag-dot"></span> Analyseur de réseau</div>
       <h3>Pose d'analyseur & analyse de données</h3>
-      <p>Installation d'analyseurs de réseau sur vos installations, collecte des données de mesure et restitution d'un rapport d'analyse complet : qualité du réseau, harmoniques, déséquilibres, consommations et préconisations. Nous utilisons l'analyseur de réseau <strong>FLUKE 1738</strong>, un appareil de dernière génération ultra-performant, garantissant des mesures d'une précision inégalée et une fiabilité totale sur chaque intervention.</p>
+      <p>Installation d'analyseurs de réseau sur vos installations, collecte des données de mesure et restitution d'un rapport d'analyse complet : qualité du réseau, harmoniques, déséquilibres, consommations et préconisations.</p>
       <div class="prestation-features">
         <span class="prestation-feat"><span class="dot-yellow">●</span> Pose & dépose de l'analyseur</span>
         <span class="prestation-feat"><span class="dot-yellow">●</span> Analyse des harmoniques & déséquilibres</span>
@@ -1876,8 +1566,11 @@
       </div>
     </div>
     <div class="prestation-photo yellow-glow">
-      <div style="display:flex; align-items:center; justify-content:center; background:linear-gradient(145deg, #0a0d15 0%, #111728 40%, #0a0d15 100%); padding:40px;">
-        <img src="photos%20prestas/anr1.png" alt="Analyseur de réseau FLUKE 1738" style="max-height:360px; width:auto; border-radius:12px;">
+      <!-- REMPLACER par : <img src="votre-photo-analyseur.jpg" alt="Analyseur de réseau"> -->
+      <div class="photo-placeholder">
+        <div class="preview-grid"></div>
+        <span class="photo-icon">📡</span>
+        <span class="photo-label">Photo — Analyseur de réseau</span>
       </div>
     </div>
   </div>
@@ -1896,8 +1589,11 @@
       </div>
     </div>
     <div class="prestation-photo blue-glow">
-      <div style="display:flex; align-items:center; justify-content:center; background:linear-gradient(145deg, #0a0d15 0%, #111728 40%, #0a0d15 100%); padding:40px;">
-        <img src="photos%20prestas/ch1.png" alt="Chiffrage de chantier" style="max-height:360px; width:auto; border-radius:12px;">
+      <!-- REMPLACER par : <img src="votre-photo-chiffrage.jpg" alt="Chiffrage de chantier"> -->
+      <div class="photo-placeholder">
+        <div class="preview-grid"></div>
+        <span class="photo-icon">🧮</span>
+        <span class="photo-label">Photo — Chiffrage de chantier</span>
       </div>
     </div>
   </div>
@@ -1916,49 +1612,15 @@
       </div>
     </div>
     <div class="prestation-photo yellow-glow">
-      <div style="display:flex; align-items:center; justify-content:center; background:linear-gradient(145deg, #0a0d15 0%, #111728 40%, #0a0d15 100%); padding:40px;">
-        <img src="photos%20prestas/th1.png" alt="Thermographie infrarouge" style="max-height:360px; width:auto; border-radius:12px;">
+      <!-- REMPLACER par : <img src="votre-photo-thermographie.jpg" alt="Thermographie infrarouge"> -->
+      <div class="photo-placeholder">
+        <div class="preview-grid"></div>
+        <span class="photo-icon">🌡️</span>
+        <span class="photo-label">Photo — Thermographie sur site</span>
       </div>
     </div>
   </div>
 
-</section>
-
-<!-- NOS PARTENAIRES -->
-<section class="partners-section" id="partenaires">
-  <div class="section-header reveal">
-    <div class="section-label yellow">Nos partenaires</div>
-    <div class="brand-divider"></div>
-    <h2 class="section-title">Nos partenaires pour vous accompagner<br>tout au long de votre projet</h2>
-    <p class="section-subtitle" style="max-width:640px;">Nous travaillons avec des partenaires de confiance pour accompagner nos clients dans le déroulement complet de leur chantier.</p>
-  </div>
-
-  <div class="partners-content reveal">
-    <div class="partners-text">
-      <p>Au-delà de nos études, nous collaborons étroitement avec un réseau de professionnels triés sur le volet pour assurer la réussite de votre projet de bout en bout :</p>
-      <div class="partners-grid">
-        <div class="partner-card">
-          <div class="partner-icon">🔧</div>
-          <h4>Tableautiers</h4>
-          <p>Fabrication et câblage de vos armoires électriques à partir de nos schémas, dans le respect strict de nos études.</p>
-        </div>
-        <div class="partner-card">
-          <div class="partner-icon">🔍</div>
-          <h4>Bureaux de contrôle</h4>
-          <p>Vérification des installations et levée de réserves pour une mise en conformité rapide et sans surprise.</p>
-        </div>
-        <div class="partner-card">
-          <div class="partner-icon">⚡</div>
-          <h4>Électriciens qualifiés</h4>
-          <p>Des professionnels compétents pour la pose des armoires sur chantier et la mise en service de vos installations.</p>
-        </div>
-      </div>
-      <div class="partners-note">
-        <div class="partners-note-icon">💡</div>
-        <p>Si nous orientons nos clients vers ces partenaires, c'est parce qu'ils sortent du lot. Notre priorité est que le travail en amont comme en aval de nos études soit réalisé avec le même niveau d'exigence que le nôtre.</p>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- CONSTAT (après les prestations) -->
@@ -2079,26 +1741,25 @@
     <h2 class="section-title">Recevez votre devis sous 24h</h2>
     <p class="section-subtitle">Remplissez le formulaire, on revient vers vous rapidement.</p>
   </div>
-  <form action="https://formspree.io/f/xdalekda" method="POST" class="devis-form reveal">
-    <input type="hidden" name="_subject" value="Nouvelle demande de devis — RES ELEC">
+  <div class="devis-form reveal">
     <div class="form-row">
       <div class="form-group">
         <label>Nom / Entreprise *</label>
-        <input type="text" name="nom" placeholder="Ex : SMP Élec" required>
+        <input type="text" placeholder="Ex : SMP Élec" required>
       </div>
       <div class="form-group">
         <label>Email *</label>
-        <input type="email" name="email" placeholder="contact@votreentreprise.fr" required>
+        <input type="email" placeholder="contact@votreentreprise.fr" required>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
         <label>Téléphone</label>
-        <input type="tel" name="telephone" placeholder="06 XX XX XX XX">
+        <input type="tel" placeholder="06 XX XX XX XX">
       </div>
       <div class="form-group">
         <label>Type de prestation</label>
-        <select name="prestation">
+        <select>
           <option value="">Sélectionnez...</option>
           <option>Notes de calcul Caneco</option>
           <option>Schémas unifilaires</option>
@@ -2116,7 +1777,7 @@
     <div class="form-row">
       <div class="form-group full">
         <label>Décrivez votre projet *</label>
-        <textarea name="projet" placeholder="Type de bâtiment, puissance estimée, nombre de tableaux, délai souhaité..."></textarea>
+        <textarea placeholder="Type de bâtiment, puissance estimée, nombre de tableaux, délai souhaité..."></textarea>
       </div>
     </div>
     <div class="form-submit">
@@ -2124,7 +1785,7 @@
         Envoyer ma demande <span class="arrow">→</span>
       </button>
     </div>
-  </form>
+  </div>
 </section>
 
 <!-- CTA -->
@@ -2132,7 +1793,7 @@
   <div class="cta-box reveal">
     <h2>Un projet en cours ?<br>Parlons-en <span class="text-yellow">maintenant</span>.</h2>
     <p>Appelez-nous directement ou envoyez votre demande. Devis gratuit, réponse sous 24h, zéro engagement.</p>
-    <a href="#" class="btn-primary" onclick="event.preventDefault(); document.getElementById('contactModal').classList.add('open');">
+    <a href="tel:+33689634487" class="btn-primary">
       Appeler maintenant <span class="arrow">→</span>
     </a>
     <div class="cta-guarantees">
@@ -2149,12 +1810,12 @@
   <div class="footer-left">© 2026 RES ELEC — Bureau d'études électriques</div>
   <div class="footer-right">
     <a href="#">LinkedIn</a>
-    <a href="/cdn-cgi/l/email-protection#b4d7dbdac0d5d7c0f4c6d1c7d1d8d1d79ad2c6">Email</a>
+    <a href="mailto:contact@reselec.fr">Email</a>
     <a href="#">Mentions légales</a>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Reveal on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
@@ -2166,13 +1827,11 @@
   }, { threshold: 0.06, rootMargin: '0px 0px -20px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Smooth scroll (only for # links, not tel: or mailto:)
+  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (!href || href === '#') return;
       e.preventDefault();
-      const target = document.querySelector(href);
+      const target = document.querySelector(this.getAttribute('href'));
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
@@ -2198,82 +1857,21 @@
     }
   });
 
-  // Carousel functionality
-  const carouselState = {};
-
-  function initCarousel(id) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    const slides = el.querySelectorAll('.carousel-slide');
-    carouselState[id] = { current: 0, total: slides.length };
-    // Auto-play every 3 seconds
-    carouselState[id].interval = setInterval(() => moveCarousel(id, 1), 3000);
-    // Pause on hover
-    el.addEventListener('mouseenter', () => clearInterval(carouselState[id].interval));
-    el.addEventListener('mouseleave', () => {
-      carouselState[id].interval = setInterval(() => moveCarousel(id, 1), 3000);
-    });
-  }
-
-  function moveCarousel(id, dir) {
-    const state = carouselState[id];
-    if (!state) return;
-    state.current = (state.current + dir + state.total) % state.total;
-    updateCarousel(id);
-  }
-
-  function goToSlide(id, index) {
-    const state = carouselState[id];
-    if (!state) return;
-    state.current = index;
-    updateCarousel(id);
-  }
-
-  function updateCarousel(id) {
-    const el = document.getElementById(id);
-    const state = carouselState[id];
-    const track = el.querySelector('.carousel-track');
-    track.style.transform = 'translateX(-' + (state.current * 100) + '%)';
-    const dots = el.querySelectorAll('.carousel-dot');
-    dots.forEach(function(d, i) { d.classList.toggle('active', i === state.current); });
-  }
-
-  initCarousel('carousel-puissance');
-  initCarousel('carousel-commande');
-  initCarousel('carousel-plans');
+  // Form
+  document.querySelector('.form-submit .btn-primary').addEventListener('click', function(e) {
+    e.preventDefault();
+    alert('Merci pour votre demande ! Nous vous recontactons sous 24h.');
+  });
 </script>
-
-<!-- CONTACT MODAL -->
-<div class="contact-modal-overlay" id="contactModal">
-  <div class="contact-modal">
-    <button class="contact-modal-close" onclick="document.getElementById('contactModal').classList.remove('open');">✕</button>
-    <div class="contact-modal-avatar">DP</div>
-    <h3>Dorian PATOUT</h3>
-    <div class="contact-role">Directeur Technique</div>
-    <div class="contact-company">RES ELEC — Bureau d'études électriques</div>
-    <div class="contact-modal-phone">
-      <div class="phone-icon">📞</div>
-      <div class="phone-number">06 89 63 44 87</div>
-    </div>
-    <div class="contact-modal-phone" style="margin-bottom:20px;">
-      <div class="phone-icon">✉️</div>
-      <div class="phone-number" style="font-size:1.05rem;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f0939f9e84919384b0829583959c9593de9682">[email&#160;protected]</a></div>
-    </div>
-    <div class="contact-modal-actions">
-      <a href="tel:+33689634487" class="btn-call" onclick="window.location.href='tel:+33689634487';">📞 Appeler</a>
-      <a href="/cdn-cgi/l/email-protection#492a26273d282a3d093b2c3a2c252c2a672f3b" class="btn-email" onclick="window.location.href='mailto:contact@reselec.fr';">✉️ Envoyer un email</a>
-    </div>
-  </div>
-</div>
 
 <!-- FLOATING CONTACT BUTTON -->
 <div class="floating-contact" id="floatingContact">
   <div class="floating-contact-expanded">
-    <a href="#" class="floating-option" onclick="event.preventDefault(); document.getElementById('contactModal').classList.add('open'); floatingContact.classList.remove('open');">
+    <a href="tel:+33689634487" class="floating-option">
       <span class="opt-icon phone">📞</span>
       Appeler directement
     </a>
-    <a href="/cdn-cgi/l/email-protection#beddd1d0cadfddcafeccdbcddbd2dbdd90d8cc" class="floating-option" onclick="window.location.href='mailto:contact@reselec.fr';">
+    <a href="mailto:contact@reselec.fr" class="floating-option">
       <span class="opt-icon mail">✉️</span>
       Envoyer un email
     </a>
@@ -2291,7 +1889,7 @@
   </button>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Floating contact toggle
   const floatingContact = document.getElementById('floatingContact');
   const floatingBtn = document.getElementById('floatingBtn');
@@ -2309,4 +1907,19 @@
   // Close when clicking outside
   document.addEventListener('click', (e) => {
     if (!floatingContact.contains(e.target)) {
-      floatingContact.classList.re
+      floatingContact.classList.remove('open');
+    }
+  });
+
+  // Close on scroll (optional, keeps it clean)
+  let scrollTimer;
+  window.addEventListener('scroll', () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      floatingContact.classList.remove('open');
+    }, 150);
+  });
+</script>
+
+</body>
+</html>

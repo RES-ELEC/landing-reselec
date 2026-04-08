@@ -838,6 +838,37 @@
     line-height: 1.7;
     margin-bottom: 20px;
   }
+  .material-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: rgba(234, 179, 8, 0.07);
+    border: 1px solid rgba(234, 179, 8, 0.35);
+    border-left: 3px solid var(--brand-yellow);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: -8px 0 22px 0;
+  }
+  .material-box .material-icon {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    flex-shrink: 0;
+  }
+  .material-box .material-content {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--text-primary);
+  }
+  .material-box .material-label {
+    display: inline-block;
+    color: var(--brand-yellow);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    margin-right: 8px;
+  }
+  .material-box strong { color: var(--brand-yellow-light); font-weight: 600; }
 
   .prestation-features {
     display: flex;
@@ -1948,7 +1979,14 @@
     <div class="prestation-header">
       <div class="prestation-tag yellow"><span class="tag-dot"></span> Analyseur de réseau</div>
       <h3>Pose d'analyseur & analyse de données</h3>
-      <p>Installation d'analyseurs de réseau sur vos installations, collecte des données de mesure et restitution d'un rapport d'analyse complet : qualité du réseau, harmoniques, déséquilibres, consommations et préconisations. Nous utilisons l'analyseur de réseau <strong>FLUKE 1738</strong>, un appareil de dernière génération ultra-performant, garantissant des mesures d'une précision inégalée et une fiabilité totale sur chaque intervention.</p>
+      <p>Installation d'analyseurs de réseau sur vos installations, collecte des données de mesure et restitution d'un rapport d'analyse complet : qualité du réseau, harmoniques, déséquilibres, consommations et préconisations.</p>
+      <div class="material-box">
+        <span class="material-icon">⚙️</span>
+        <div class="material-content">
+          <span class="material-label">Matériel utilisé</span>
+          Analyseur de réseau <strong>FLUKE 1738</strong> — appareil de dernière génération garantissant des mesures d'une précision inégalée et une fiabilité totale sur chaque intervention.
+        </div>
+      </div>
       <div class="prestation-features">
         <span class="prestation-feat"><span class="dot-yellow">●</span> Pose & dépose de l'analyseur</span>
         <span class="prestation-feat"><span class="dot-yellow">●</span> Analyse des harmoniques & déséquilibres</span>
@@ -1987,7 +2025,14 @@
     <div class="prestation-header">
       <div class="prestation-tag yellow"><span class="tag-dot"></span> Thermographie (Q19)</div>
       <h3>Thermographie infrarouge sur site</h3>
-      <p>Détectez les défauts invisibles à l'œil nu avant qu'ils ne deviennent des pannes coûteuses. Équipés de caméras thermiques FLIR E76 et de pinces ampèremétriques Chauvin Arnoux MA400D, nos opérateurs identifient les échauffements anormaux, connexions défectueuses, déséquilibres de phases et harmoniques de rang 3. Chaque intervention donne lieu à un rapport détaillé avec actions correctives priorisées et préventives. Nos opérateurs sont qualifiés conformément aux exigences du CNPP (Centre National de Prévention et de Protection) et sont habilités à délivrer le certificat Q19 destiné aux assureurs.</p>
+      <p>Détectez les défauts invisibles à l'œil nu avant qu'ils ne deviennent des pannes coûteuses. Nos opérateurs identifient les échauffements anormaux, connexions défectueuses, déséquilibres de phases et harmoniques de rang 3. Chaque intervention donne lieu à un rapport détaillé avec actions correctives priorisées et préventives. Nos opérateurs sont qualifiés conformément aux exigences du CNPP (Centre National de Prévention et de Protection) et sont habilités à délivrer le certificat Q19 destiné aux assureurs.</p>
+      <div class="material-box">
+        <span class="material-icon">🔥</span>
+        <div class="material-content">
+          <span class="material-label">Matériel utilisé</span>
+          Caméra thermique <strong>FLIR E76</strong> &nbsp;•&nbsp; Pince ampèremétrique <strong>Chauvin Arnoux MA400D</strong> — équipements professionnels haut de gamme pour une détection ultra-précise.
+        </div>
+      </div>
       <div class="prestation-features">
         <span class="prestation-feat"><span class="dot-yellow">●</span> Détection des points chauds</span>
         <span class="prestation-feat"><span class="dot-yellow">●</span> Contrôle des connexions & serrages</span>

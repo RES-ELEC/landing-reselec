@@ -838,13 +838,20 @@
     line-height: 1.7;
     margin-bottom: 20px;
   }
-  .material-line {
+  .material-block {
+    margin: -4px 0 22px 0;
+    color: var(--brand-blue);
     font-size: 0.95rem;
-    color: var(--brand-blue-light);
+    font-weight: 500;
+    line-height: 1.7;
+  }
+  .material-block .material-title {
     text-decoration: underline;
     text-underline-offset: 3px;
-    margin: -4px 0 22px 0;
-    font-weight: 500;
+    display: block;
+  }
+  .material-block .material-item {
+    display: block;
   }
 
   .prestation-features {
@@ -1957,7 +1964,10 @@
       <div class="prestation-tag yellow"><span class="tag-dot"></span> Analyseur de réseau</div>
       <h3>Pose d'analyseur & analyse de données</h3>
       <p>Installation d'analyseurs de réseau sur vos installations, collecte des données de mesure et restitution d'un rapport d'analyse complet : qualité du réseau, harmoniques, déséquilibres, consommations et préconisations.</p>
-      <p class="material-line">Matériel utilisé : Analyseur de réseau FLUKE 1738</p>
+      <div class="material-block">
+        <span class="material-title">Matériel utilisé :</span>
+        <span class="material-item">Analyseur de réseau FLUKE 1738</span>
+      </div>
       <div class="prestation-features">
         <span class="prestation-feat"><span class="dot-yellow">●</span> Pose & dépose de l'analyseur</span>
         <span class="prestation-feat"><span class="dot-yellow">●</span> Analyse des harmoniques & déséquilibres</span>
@@ -1997,8 +2007,11 @@
       <div class="prestation-tag yellow"><span class="tag-dot"></span> Thermographie (Q19)</div>
       <h3>Thermographie infrarouge sur site</h3>
       <p>Détectez les défauts invisibles à l'œil nu avant qu'ils ne deviennent des pannes coûteuses. Nos opérateurs identifient les échauffements anormaux, connexions défectueuses, déséquilibres de phases et harmoniques de rang 3. Chaque intervention donne lieu à un rapport détaillé avec actions correctives priorisées et préventives. Nos opérateurs sont qualifiés conformément aux exigences du CNPP (Centre National de Prévention et de Protection) et sont habilités à délivrer le certificat Q19 destiné aux assureurs.</p>
-      <p class="material-line">Matériel utilisé : Caméra thermique FLIR E76</p>
-      <p class="material-line">Matériel utilisé : Pince ampèremétrique Chauvin Arnoux MA400D</p>
+      <div class="material-block">
+        <span class="material-title">Matériel utilisé :</span>
+        <span class="material-item">Caméra thermique FLIR E76</span>
+        <span class="material-item">Pince ampèremétrique Chauvin Arnoux MA400D</span>
+      </div>
       <div class="prestation-features">
         <span class="prestation-feat"><span class="dot-yellow">●</span> Détection des points chauds</span>
         <span class="prestation-feat"><span class="dot-yellow">●</span> Contrôle des connexions & serrages</span>

@@ -853,6 +853,26 @@
   .material-block .material-item {
     display: block;
   }
+  .norms-list {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 16px 0;
+  }
+  .norms-list li {
+    color: var(--brand-yellow);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    padding-left: 18px;
+    position: relative;
+  }
+  .norms-list li::before {
+    content: '●';
+    position: absolute;
+    left: 0;
+    color: var(--brand-yellow);
+    font-size: 0.7rem;
+    top: 2px;
+  }
 
   .prestation-features {
     display: flex;
@@ -2077,7 +2097,15 @@
     <div class="pain-card reveal">
       <span class="pain-emoji">📋</span>
       <h3>Des exigences réglementaires croissantes</h3>
-      <p>NF C 15-100 (2024)<br>FD C 15-105<br>FD C 15-106<br>Arrêté du 17 Mai 2023<br>RT2012/RE2020<br>Vérifications Consuel...<br><br>La conformité demande une expertise pointue et à jour.</p>
+      <ul class="norms-list">
+        <li>NF C 15-100 (2024)</li>
+        <li>FD C 15-105</li>
+        <li>FD C 15-106</li>
+        <li>Arrêté du 17 Mai 2023</li>
+        <li>RT2012/RE2020</li>
+        <li>Vérifications Consuel...</li>
+      </ul>
+      <p>La conformité demande une expertise pointue et à jour.</p>
     </div>
     <div class="pain-card reveal">
       <span class="pain-emoji">💸</span>

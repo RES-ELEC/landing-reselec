@@ -10,9 +10,12 @@ from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 
 API_URL = "https://recherche-entreprises.api.gouv.fr/search"
-DEPARTEMENT = "75"
-CODE_APE = "43.21A"
+DEPARTEMENT = "91"
+CODE_APE = "71.12b"
 PER_PAGE = 25
+CHUNK_SIZE = 1500
+PAUSE_EVERY = 30      # toutes les N pages
+PAUSE_DURATION = 10   # secondes
 OUTPUT_FILE = rf"C:\Users\chapo\Desktop\Landing RES ELEC\entreprises_4321A_{DEPARTEMENT}.xlsx"
 
 CODES_SARL_SAS = {"5498", "5499", "5710", "5720"}
@@ -54,6 +57,9 @@ def scrape_all():
     for page in range(1, total_pages + 1):
         if page > 1:
             time.sleep(0.5)
+            if (page - 1) % PAUSE_EVERY == 0:
+                print(f"\n  💤 Pause {PAUSE_DURATION}s (anti rate-limit)...", flush=True)
+                time.sleep(PAUSE_DURATION)
             data = fetch_page(page)
         for c in data.get("results", []):
             nj = str(c.get("nature_juridique", "") or "")
@@ -109,8 +115,15 @@ def main():
     except requests.exceptions.RequestException as e:
         print(f"\n❌ Erreur : {e}"); sys.exit(1)
     if not companies: print("Aucune entreprise trouvée."); sys.exit(0)
-    export_excel(companies, OUTPUT_FILE)
-    print(f"\nTerminé ! {len(companies)} lignes dans {OUTPUT_FILE}")
+    # Split en chunks de CHUNK_SIZE lignes
+    total = len(companies)
+    nb_chunks = (total + CHUNK_SIZE - 1) // CHUNK_SIZE
+    base, ext = OUTPUT_FILE.rsplit(".", 1)
+    for i in range(nb_chunks):
+        chunk = companies[i*CHUNK_SIZE:(i+1)*CHUNK_SIZE]
+        fname = OUTPUT_FILE if nb_chunks == 1 else f"{base}_part{i+1}.{ext}"
+        export_excel(chunk, fname)
+    print(f"\nTerminé ! {total} lignes au total ({nb_chunks} fichier(s))")
 
 if __name__ == "__main__":
     main()

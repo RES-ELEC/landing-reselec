@@ -1657,6 +1657,30 @@
     background: var(--bg-card-hover);
     transform: translateY(-1px);
   }
+  .contact-modal-save {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px 20px;
+    margin-top: 12px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    background: rgba(234, 179, 8, 0.1);
+    color: var(--brand-yellow);
+    border: 1px solid var(--brand-yellow);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+  }
+  .contact-modal-save:hover {
+    background: rgba(234, 179, 8, 0.18);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(234, 179, 8, 0.2);
+  }
 
   @media (max-width: 768px) {
     .contact-modal { padding: 36px 24px; }
@@ -2351,6 +2375,7 @@
       <a href="tel:+33689634487" class="btn-call" onclick="window.location.href='tel:+33689634487';">📞 Appeler</a>
       <a href="mailto:contact@reselec.fr" class="btn-email">✉️ Envoyer un email</a>
     </div>
+    <button type="button" class="contact-modal-save" onclick="downloadVCard()">📇 Enregistrer le contact</button>
   </div>
 </div>
 
@@ -2419,6 +2444,32 @@
       e.currentTarget.classList.remove('open');
     }
   });
+
+  // Download contact as vCard (.vcf)
+  function downloadVCard() {
+    const vcard = [
+      'BEGIN:VCARD',
+      'VERSION:3.0',
+      'N:PATOUT;Dorian;;;',
+      'FN:Dorian PATOUT',
+      'ORG:RES ELEC Bureau d\'études',
+      'TITLE:Dirigeant',
+      'TEL;TYPE=CELL,VOICE:+33689634487',
+      'EMAIL;TYPE=WORK:contact@reselec.fr',
+      'URL:https://www.reselec.fr',
+      'END:VCARD'
+    ].join('\r\n');
+
+    const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Dorian-PATOUT.vcf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
 </script>
 </body>
 </html>
